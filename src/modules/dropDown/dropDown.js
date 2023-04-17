@@ -10,6 +10,7 @@ const dropDown = (passedOptions) => {
     parentClasses: "drop-down",
     containerClasses: "drop-down-container",
     labelClasses: "drop-down-label",
+    selectionClasses: "drop-down-selection",
 
     // IDs
     inputIdPrefix: "drop-down-input-",
@@ -94,15 +95,16 @@ const dropDown = (passedOptions) => {
   element.appendChild(container);
 
   // Either a p if standard or text input if autoSuggest, autoComplete, or userSetValues are true
-  let selectedItemText;
+  let selection;
   if (autoSuggest || autoComplete || userSetValues) {
-    selectedItemText = document.createElement("input");
-    selectedItemText.setAttribute("type", "text");
+    selection = document.createElement("input");
+    selection.setAttribute("type", "text");
   } else {
-    selectedItemText = document.createElement("p");
+    selection = document.createElement("p");
   }
-  selectedItemText.setAttribute("id", inputId);
-  element.appendChild(selectedItemText);
+  selection.setAttribute("id", inputId);
+  addClasses(mergedOptions.selectionClasses, selection);
+  element.appendChild(selection);
 
   //   arrow
   // dropdown menu
