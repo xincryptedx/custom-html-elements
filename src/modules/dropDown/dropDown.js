@@ -94,9 +94,8 @@ const dropDown = (passedOptions) => {
   element.appendChild(container);
   addClasses(mergedOptions.containerClasses, container);
 
-  // container
-  //   arrow
   //   selected option text/placeholder text
+  //   arrow
   // dropdown menu
   //   scroll bar
   //   **menu items, cagetgories, and dividers created from menu data property**
