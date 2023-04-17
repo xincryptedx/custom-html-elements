@@ -19,22 +19,21 @@ const dropDown = (passedOptions) => {
 
   // #endregion
 
-  // #region Drop down properties
-  /* --General values--
-   placeholder text
-   menu data which will be [value, value, value] or {category: [value], category: [value]}
+  // #region Properties
+  // --General values--
+  // placeholder text
+  // menu data which will be [value, value, value] or {category: [value], category: [value]}
 
-  --Functional Variations--
-   autoSuggest bool
-   autoComplete bool
-   userSetValues bool
-   required bool
+  // --Functional Variations--
+  const autoSuggest = mergedOptions.autoSuggest === true;
+  const autoComplete = mergedOptions.autoComplete === true;
+  const userSetValues = mergedOptions.userSetValues === true;
+  // Requred bool
 
-  --Style Variations--
-   detatched bool
+  // --Style Variations--
+  /* detatched bool
    style options enum
-   style
-    */
+   style */
 
   // #endregion
 
@@ -85,16 +84,26 @@ const dropDown = (passedOptions) => {
   // Label
   const inputId = generateId();
   const label = document.createElement("label");
-  element.appendChild(label);
   addClasses(mergedOptions.labelClasses, label);
   label.setAttribute("for", inputId);
+  element.appendChild(label);
 
   // Container
   const container = document.createElement("div");
-  element.appendChild(container);
   addClasses(mergedOptions.containerClasses, container);
+  element.appendChild(container);
 
-  //   selected option text/placeholder text
+  // Either a p if standard or text input if autoSuggest, autoComplete, or userSetValues are true
+  let selectedItemText;
+  if (autoSuggest || autoComplete || userSetValues) {
+    selectedItemText = document.createElement("input");
+    selectedItemText.setAttribute("type", "text");
+  } else {
+    selectedItemText = document.createElement("p");
+  }
+  selectedItemText.setAttribute("id", inputId);
+  element.appendChild(selectedItemText);
+
   //   arrow
   // dropdown menu
   //   scroll bar
