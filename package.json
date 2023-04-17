@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/xincryptedx/custom-html-elements/issues"
   },
-  "homepage": "https://github.com/xincryptedx/custom-html-elements#readme"
+  "homepage": "https://github.com/xincryptedx/custom-html-elements#readme",
+  "devDependencies": {
+    "eslint": "^8.38.0"
+  }
 }
