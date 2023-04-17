@@ -1,5 +1,5 @@
 const dropDown = (passedOptions) => {
-  // Options validation
+  // #region Options validation
   let validatedOptions;
   if (!passedOptions || typeof passedOptions !== "object") {
     validatedOptions = {};
@@ -11,8 +11,10 @@ const dropDown = (passedOptions) => {
 
   const mergedOptions = { ...defaultOptions, ...validatedOptions };
 
-  /* Drop down properties
-  --General values--
+  // #endregion
+
+  // #region Drop down properties
+  /* --General values--
    placeholder text
    menu data which will be [value, value, value] or {category: [value], category: [value]}
 
@@ -28,7 +30,9 @@ const dropDown = (passedOptions) => {
    style
     */
 
-  // Helper methods
+  // #endregion
+
+  // #region Helper methods
   const addClasses = (classes, element) => {
     const classesToAdd = [];
     if (typeof classes === "string") {
@@ -45,6 +49,8 @@ const dropDown = (passedOptions) => {
       element.classList.add(...classesToAdd);
     }
   };
+
+  // #endregion
 
   // Create the base parent element
   const element = document.createElement("div");
@@ -65,7 +71,6 @@ const dropDown = (passedOptions) => {
 
   // Methods for altering after creation
 
-  // Return the element and methods for altering it
   return {
     element,
   };
