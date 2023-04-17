@@ -1,10 +1,7 @@
-const dropDown = (passedOptions) => {
-  // #region Options validation
-  let validatedOptions;
-  if (!passedOptions || typeof passedOptions !== "object") {
-    validatedOptions = {};
-  } else validatedOptions = passedOptions;
+import validateOptions from "./validateOptions";
 
+const dropDown = (passedOptions) => {
+  // #region Options
   const defaultOptions = {
     // Classes
     parentClasses: "drop-down",
@@ -16,7 +13,7 @@ const dropDown = (passedOptions) => {
     inputIdPrefix: "drop-down-input-",
   };
 
-  const mergedOptions = { ...defaultOptions, ...validatedOptions };
+  const validatedOptions = validateOptions(defaultOptions, passedOptions);
 
   // #endregion
 
@@ -26,9 +23,9 @@ const dropDown = (passedOptions) => {
   // menu data which will be [value, value, value] or {category: [value], category: [value]}
 
   // --Functional Variations--
-  const autoSuggest = mergedOptions.autoSuggest === true;
-  const autoComplete = mergedOptions.autoComplete === true;
-  const userSetValues = mergedOptions.userSetValues === true;
+  const autoSuggest = validatedOptions.autoSuggest === true;
+  const autoComplete = validatedOptions.autoComplete === true;
+  const userSetValues = validatedOptions.userSetValues === true;
   // Requred bool
 
   // --Style Variations--
@@ -57,18 +54,18 @@ const dropDown = (passedOptions) => {
   };
 
   const generatedIds = document.querySelectorAll(
-    `[id^="${mergedOptions.inputIdPrefix}"],
-     [for^="${mergedOptions.inputIdPrefix}"]`
+    `[id^="${validatedOptions.inputIdPrefix}"],
+     [for^="${validatedOptions.inputIdPrefix}"]`
   );
 
   const generateId = () => {
     let randomizedString = Math.random().toString(36).substring(2, 32);
-    let newId = `${mergedOptions.inputIdPrefix}${randomizedString}`;
+    let newId = `${validatedOptions.inputIdPrefix}${randomizedString}`;
 
     for (let i = 0; i < generatedIds.length; i += 1) {
       if (generatedIds[i].id === newId) {
         randomizedString = Math.random().toString(36).substring(2, 32);
-        newId = `${mergedOptions.inputIdPrefix}${randomizedString}`;
+        newId = `${validatedOptions.inputIdPrefix}${randomizedString}`;
         i = -1;
       }
     }
@@ -80,18 +77,18 @@ const dropDown = (passedOptions) => {
 
   // Create the base parent element
   const element = document.createElement("div");
-  addClasses(mergedOptions.parentClasses, element);
+  addClasses(validatedOptions.parentClasses, element);
 
   // Label
   const inputId = generateId();
   const label = document.createElement("label");
-  addClasses(mergedOptions.labelClasses, label);
+  addClasses(validatedOptions.labelClasses, label);
   label.setAttribute("for", inputId);
   element.appendChild(label);
 
   // Container
   const container = document.createElement("div");
-  addClasses(mergedOptions.containerClasses, container);
+  addClasses(validatedOptions.containerClasses, container);
   element.appendChild(container);
 
   // Either a p if standard or text input if autoSuggest, autoComplete, or userSetValues are true
@@ -103,7 +100,7 @@ const dropDown = (passedOptions) => {
     selection = document.createElement("p");
   }
   selection.setAttribute("id", inputId);
-  addClasses(mergedOptions.selectionClasses, selection);
+  addClasses(validatedOptions.selectionClasses, selection);
   element.appendChild(selection);
 
   //   arrow
