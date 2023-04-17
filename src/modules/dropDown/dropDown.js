@@ -1,4 +1,4 @@
-const dropDown = ((passedOptions) => {
+const dropDown = (passedOptions) => {
   // Options validation
   let validatedOptions;
   if (!passedOptions || typeof passedOptions !== "object") {
@@ -30,6 +30,9 @@ const dropDown = ((passedOptions) => {
    style
     */
 
+  // Create the base parent element
+  const element = document.createElement("div");
+
   // Construct the element and children
   // Create base html element that will contain everything
   // label text
@@ -44,6 +47,9 @@ const dropDown = ((passedOptions) => {
   // Style the element and children
 
   // Return the element and methods for altering it
-})();
+  return {
+    element,
+  };
+};
 
 export default dropDown;
