@@ -65,12 +65,13 @@ const dropDown = (passedOptions) => {
     let randomizedString = Math.random().toString(36).substring(2, 32);
     let newId = `${mergedOptions.inputIdPrefix}${randomizedString}`;
 
-    while (generatedIds.includes(newId)) {
-      randomizedString = Math.random().toString(36).substring(2, 32);
-      newId = `${mergedOptions.inputIdPrefix}${randomizedString}`;
+    for (let i = 0; i < generatedIds.length; i += 1) {
+      if (generatedIds[i].id === newId) {
+        randomizedString = Math.random().toString(36).substring(2, 32);
+        newId = `${mergedOptions.inputIdPrefix}${randomizedString}`;
+        i = -1;
+      }
     }
-
-    generatedIds.push(newId);
 
     return newId;
   };
@@ -81,17 +82,17 @@ const dropDown = (passedOptions) => {
   const element = document.createElement("div");
   addClasses(mergedOptions.parentClasses, element);
 
-  // Container
-  const container = document.createElement("div");
-  element.appendChild(container);
-  addClasses(mergedOptions.containerClasses, container);
-
   // Label
   const inputId = generateId();
   const label = document.createElement("label");
   element.appendChild(label);
   addClasses(mergedOptions.labelClasses, label);
   label.setAttribute("for", inputId);
+
+  // Container
+  const container = document.createElement("div");
+  element.appendChild(container);
+  addClasses(mergedOptions.containerClasses, container);
 
   // container
   //   arrow
