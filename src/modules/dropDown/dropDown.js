@@ -6,7 +6,13 @@ const dropDown = (passedOptions) => {
   } else validatedOptions = passedOptions;
 
   const defaultOptions = {
+    // Classes
+    parentClasses: "drop-down",
     containerClasses: "drop-down-container",
+    labelClasses: "drop-down-label",
+
+    // IDs
+    inputIdPrefix: "drop-down-input-",
   };
 
   const mergedOptions = { ...defaultOptions, ...validatedOptions };
@@ -50,15 +56,44 @@ const dropDown = (passedOptions) => {
     }
   };
 
+  const generatedIds = document.querySelectorAll(
+    `[id^="${mergedOptions.inputIdPrefix}"]`
+  );
+
+  console.log(generatedIds);
+
+  const generateId = () => {
+    const randomizedString = Math.random().toString(36).substring(2, 32);
+    const newId = `${mergedOptions.inputIdPrefix}${randomizedString}`;
+
+    /*  while (generatedIds.includes(randomizedString)) {
+      randomizedString = Math.random().toString(36).substring(2, 32);
+      newId = `${mergedOptions.inputIdPrefix}${randomizedString}`;
+    }
+
+    generatedIds.push(newId); */
+    console.log(generatedIds);
+
+    return newId;
+  };
+
   // #endregion
 
   // Create the base parent element
   const element = document.createElement("div");
-  addClasses(mergedOptions.containerClasses, element);
+  addClasses(mergedOptions.parentClasses, element);
 
-  // Construct the element and children
-  // Create base html element that will contain everything
-  // label text
+  // Container
+  const container = document.createElement("div");
+  element.appendChild(container);
+  addClasses(mergedOptions.containerClasses, container);
+
+  // Label
+  const label = document.createElement("label");
+  element.appendChild(label);
+  addClasses(mergedOptions.labelClasses, label);
+  label.setAttribute("for", generateId());
+
   // container
   //   arrow
   //   selected option text/placeholder text
