@@ -61,19 +61,16 @@ const dropDown = (passedOptions) => {
      [for^="${mergedOptions.inputIdPrefix}"]`
   );
 
-  console.log(`[id^="${mergedOptions.inputIdPrefix}"]`);
-
   const generateId = () => {
-    const randomizedString = Math.random().toString(36).substring(2, 32);
-    const newId = `${mergedOptions.inputIdPrefix}${randomizedString}`;
+    let randomizedString = Math.random().toString(36).substring(2, 32);
+    let newId = `${mergedOptions.inputIdPrefix}${randomizedString}`;
 
-    /*  while (generatedIds.includes(randomizedString)) {
+    while (generatedIds.includes(newId)) {
       randomizedString = Math.random().toString(36).substring(2, 32);
       newId = `${mergedOptions.inputIdPrefix}${randomizedString}`;
     }
 
-    generatedIds.push(newId); */
-    console.log(generatedIds);
+    generatedIds.push(newId);
 
     return newId;
   };
