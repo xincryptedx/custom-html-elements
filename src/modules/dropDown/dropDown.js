@@ -57,10 +57,11 @@ const dropDown = (passedOptions) => {
   };
 
   const generatedIds = document.querySelectorAll(
-    `[id^="${mergedOptions.inputIdPrefix}"]`
+    `[id^="${mergedOptions.inputIdPrefix}"],
+     [for^="${mergedOptions.inputIdPrefix}"]`
   );
 
-  console.log(generatedIds);
+  console.log(`[id^="${mergedOptions.inputIdPrefix}"]`);
 
   const generateId = () => {
     const randomizedString = Math.random().toString(36).substring(2, 32);
@@ -89,10 +90,11 @@ const dropDown = (passedOptions) => {
   addClasses(mergedOptions.containerClasses, container);
 
   // Label
+  const inputId = generateId();
   const label = document.createElement("label");
   element.appendChild(label);
   addClasses(mergedOptions.labelClasses, label);
-  label.setAttribute("for", generateId());
+  label.setAttribute("for", inputId);
 
   // container
   //   arrow
