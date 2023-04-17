@@ -48,6 +48,7 @@ const dropDown = (passedOptions) => {
 
   // Create the base parent element
   const element = document.createElement("div");
+  addClasses(mergedOptions.containerClasses, element);
 
   // Construct the element and children
   // Create base html element that will contain everything
