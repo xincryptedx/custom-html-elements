@@ -6,19 +6,17 @@ const dropDown = (passedOptions) => {
   } else validatedOptions = passedOptions;
 
   const defaultOptions = {
-    param1: "a value",
+    containerClasses: "drop-down-container",
   };
 
   const mergedOptions = { ...defaultOptions, ...validatedOptions };
-
-  // Drop down references
 
   /* Drop down properties
   --General values--
    placeholder text
    menu data which will be [value, value, value] or {category: [value], category: [value]}
 
-  --Function Variations--
+  --Functional Variations--
    autoSuggest bool
    autoComplete bool
    userSetValues bool
@@ -29,6 +27,24 @@ const dropDown = (passedOptions) => {
    style options enum
    style
     */
+
+  // Helper methods
+  const addClasses = (classes, element) => {
+    const classesToAdd = [];
+    if (typeof classes === "string") {
+      classesToAdd.push(classes);
+    } else if (Array.isArray(classes)) {
+      classes.forEach((cls) => {
+        if (typeof cls === "string") {
+          classesToAdd.push(cls);
+        }
+      });
+    }
+
+    if (classesToAdd.length > 0) {
+      element.classList.add(...classesToAdd);
+    }
+  };
 
   // Create the base parent element
   const element = document.createElement("div");
@@ -45,6 +61,8 @@ const dropDown = (passedOptions) => {
   // feedback text
 
   // Style the element and children
+
+  // Methods for altering after creation
 
   // Return the element and methods for altering it
   return {
