@@ -6,6 +6,7 @@ const dropDownMenu = DropDown({
   containerClasses: ["custom-class-1", "custom-class-2"],
   selectionClasses: ["custom-class-1", "custom-class-2"],
   labelClasses: ["custom-class-1", "custom-class-2"],
+  inputIdPrefix: "custom-prefix-",
 });
 
 const invalidParamDD = DropDown({
@@ -13,6 +14,7 @@ const invalidParamDD = DropDown({
   containerClasses: 6,
   selectionClasses: null,
   labelClasses: NaN,
+  inputIdPrefix: 69,
 });
 
 document.body.appendChild(dropDownMenu.element);
