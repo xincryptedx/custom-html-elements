@@ -4,7 +4,7 @@ const validateOptions = (defaultOptions, passedOptions) => {
     validatedOptions = {};
   } else validatedOptions = passedOptions;
 
-  // Class list validation
+  // Class List Validation
   const validateClasslist = (classesToValidate) => {
     if (!classesToValidate) return false;
 
@@ -24,10 +24,16 @@ const validateOptions = (defaultOptions, passedOptions) => {
     if (key.endsWith("Classes")) {
       if (!validateClasslist(validatedOptions[key])) {
         validatedOptions[key] = defaultOptions[key];
-        console.log("Replaced invalid value with default value");
       }
     }
   });
+
+  // ID Prefix Validation
+  const validateIdPrefix = (prefixToValidate) => {
+    if (!prefixToValidate) return false;
+
+    if (prefixToValidate && typeof prefixToValidate !== "string") return false;
+  };
 
   const mergedOptions = { ...defaultOptions, ...validatedOptions };
 
