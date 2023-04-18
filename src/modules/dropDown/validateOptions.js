@@ -20,9 +20,14 @@ const validateOptions = (defaultOptions, passedOptions) => {
     return true;
   };
 
-  if (!validateClasslist(validatedOptions.parentClasses)) {
-    delete validatedOptions.parentClasses;
-  }
+  Object.keys(validatedOptions).forEach((key) => {
+    if (key.endsWith("Classes")) {
+      if (!validateClasslist(validatedOptions[key])) {
+        validatedOptions[key] = defaultOptions[key];
+        console.log("Replaced invalid value with default value");
+      }
+    }
+  });
 
   const mergedOptions = { ...defaultOptions, ...validatedOptions };
 
