@@ -18,6 +18,10 @@ const validateOptions = (defaultOptions, passedOptions) => {
     return true;
   };
 
+  if (!validateClasslist(validatedOptions.parentClasses)) {
+    delete validatedOptions.parentClasses;
+  }
+
   const mergedOptions = { ...defaultOptions, ...validatedOptions };
 
   return mergedOptions;
