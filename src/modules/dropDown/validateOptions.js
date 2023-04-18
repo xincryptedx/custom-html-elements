@@ -20,20 +20,28 @@ const validateOptions = (defaultOptions, passedOptions) => {
     return true;
   };
 
+  // Prefix Validation
+  const validatePrefix = (prefixToValidate) => {
+    if (!prefixToValidate) return false;
+
+    if (prefixToValidate && typeof prefixToValidate !== "string") return false;
+
+    return true;
+  };
+
+  // Iterate through validated options keys and validate them
   Object.keys(validatedOptions).forEach((key) => {
     if (key.endsWith("Classes")) {
       if (!validateClasslist(validatedOptions[key])) {
         validatedOptions[key] = defaultOptions[key];
       }
     }
+    if (key.endsWith("Prefix")) {
+      if (!validatePrefix(validatedOptions[key])) {
+        validatedOptions[key] = defaultOptions[key];
+      }
+    }
   });
-
-  // ID Prefix Validation
-  const validateIdPrefix = (prefixToValidate) => {
-    if (!prefixToValidate) return false;
-
-    if (prefixToValidate && typeof prefixToValidate !== "string") return false;
-  };
 
   const mergedOptions = { ...defaultOptions, ...validatedOptions };
 
