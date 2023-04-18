@@ -3,7 +3,7 @@ import validateOptions from "./validateOptions";
 const dropDown = (passedOptions) => {
   // #region Options
   const defaultOptions = {
-    // Classes
+    // Classes - Key must end with "Classes" for validation
     parentClasses: "drop-down",
     containerClasses: "drop-down-container",
     labelClasses: "drop-down-label",
