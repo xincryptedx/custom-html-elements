@@ -5,15 +5,16 @@ const validateOptions = (defaultOptions, passedOptions) => {
   } else validatedOptions = passedOptions;
 
   // Class list validation
-  if (
-    !(
+  const validateClasslist = () => {
+    if (
+      // If a parentClasses property is passed but it's not an array or string
       validatedOptions.parentClasses &&
-      (Array.isArray(validatedOptions.parentClasses) ||
-        typeof validatedOptions.parentClasses === "string")
-    )
-  ) {
-    delete validateOptions.parentClasses;
-  }
+      !Array.isArray(validatedOptions.parentClasses) &&
+      typeof validatedOptions.parentClasses !== "string"
+    ) {
+      delete validateOptions.parentClasses;
+    }
+  };
 
   const mergedOptions = { ...defaultOptions, ...validatedOptions };
 
