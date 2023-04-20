@@ -93,7 +93,7 @@ const dropDown = (passedOptions, passedData) => {
   // #endregion
 
   // #region Create the html
-  // Method for creating menu elements
+  // Method for creating menu html elements
   const createMenu = (menuElement) => {
     for (let i = 0; i < validatedData.length; i += 1) {
       // Option Group
