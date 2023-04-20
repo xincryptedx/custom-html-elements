@@ -12,6 +12,9 @@ const dropDown = (passedOptions) => {
     arrowClasses: "drop-down-arrow",
     menuClasses: "drop-down-menu",
     scrollBarClasses: "drop-down-scroll-bar",
+    optGroupClasses: "drop-down-optgroup",
+    optionClasses: "drop-down-option",
+    dividerClasses: "drop-down-divider",
     feedbackClasses: "drop-down-feedback",
 
     // IDs
