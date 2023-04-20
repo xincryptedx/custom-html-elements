@@ -15,7 +15,7 @@ const generateDefaultStyle = (validatedOptions) => {
     defaultStylesTag.id = "default-drop-down-styles";
     defaultStylesTag.innerHTML = defaultStyles;
 
-    document.body.appendChild(defaultStylesTag);
+    document.head.appendChild(defaultStylesTag);
   } else {
     defaultStylesTag.innerHTML += defaultStyles;
   }
