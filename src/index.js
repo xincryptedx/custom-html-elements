@@ -17,7 +17,7 @@ const invalidParamDD = DropDown({
   containerClasses: 6,
   selectionClasses: null,
   labelClasses: NaN,
-  arrowClasses: { a: 17 },
+  arrowClasses: [],
   menuClasses: null,
   scrollBarClasses: [23, 24, 25],
   inputIdPrefix: 69,

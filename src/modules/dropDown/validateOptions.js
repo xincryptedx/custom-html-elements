@@ -8,11 +8,19 @@ const validateOptions = (defaultOptions, passedOptions) => {
   const validateClasslist = (classesToValidate) => {
     if (!classesToValidate) return false;
 
+    // If truthy classList property is passed but it's not an array or string
     if (
-      // If truthy classList property is passed but it's not an array or string
       classesToValidate &&
       !Array.isArray(classesToValidate) &&
       typeof classesToValidate !== "string"
+    ) {
+      return false;
+    }
+
+    // If an array but doesn't contain a string return false
+    if (
+      Array.isArray(classesToValidate) &&
+      !classesToValidate.some((entry) => typeof entry === "string")
     ) {
       return false;
     }
