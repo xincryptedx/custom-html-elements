@@ -1,7 +1,6 @@
 import validateOptions from "./validateOptions";
 import validateMenuData from "./validateMenuData";
 import arrowSvg from "./arrow.svg";
-import "./dropDown.css";
 
 const dropDown = (passedOptions, passedData) => {
   // #region Options and Data
