@@ -94,7 +94,13 @@ const dropDown = (passedOptions) => {
 
   // #endregion
 
-  // Create the base parent element
+  // #region Create the html
+  // Method for creating menu elements
+  const createMenu = () => {
+    // Create the menu
+  };
+
+  // Parent
   const element = document.createElement("div");
   addClasses(validatedOptions.parentClasses, element);
 
@@ -122,18 +128,18 @@ const dropDown = (passedOptions) => {
   addClasses(validatedOptions.selectionClasses, selection);
   container.appendChild(selection);
 
-  //   arrow
+  // Arrow
   const arrow = document.createElement("img");
   arrow.src = arrowSvg;
   addClasses(validatedOptions.arrowClasses, arrow);
   container.appendChild(arrow);
 
-  // dropdown menu
+  // Dropdown menu
   const menu = document.createElement("div");
   addClasses(validatedOptions.menuClasses, menu);
   element.appendChild(menu);
 
-  //   scroll bar
+  // Scroll bar
   const scrollBar = document.createElement("div");
   addClasses(validatedOptions.scrollBarClasses, scrollBar);
   menu.appendChild(scrollBar);
@@ -144,6 +150,8 @@ const dropDown = (passedOptions) => {
   const feedback = document.createElement("p");
   addClasses(validatedOptions.feedbackClasses, feedback);
   element.appendChild(feedback);
+
+  // #endregion
 
   // Style the element and children
 
