@@ -116,6 +116,22 @@ const dropDown = (passedOptions, passedData) => {
     }
   };
 
+  const styleMenuItem = (itemToStyle, itemType) => {
+    switch (itemType) {
+      case "optgroup":
+        // Code
+        break;
+      case "divider":
+        // Code
+        break;
+      case "option":
+        // Code
+        break;
+      default:
+        break;
+    }
+  };
+
   // #endregion
 
   // #region Create the html
