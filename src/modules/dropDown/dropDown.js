@@ -157,7 +157,8 @@ const dropDown = (passedOptions) => {
   addClasses(validatedOptions.scrollBarClasses, scrollBar);
   menu.appendChild(scrollBar);
 
-  //   **menu items, cagetgories, and dividers created from menu data property**
+  // Menu items, cagetgories, and dividers created from menu data
+  createMenu(menu);
 
   // feedback text
   const feedback = document.createElement("p");
