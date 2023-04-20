@@ -8,6 +8,7 @@ const dropDownMenu = DropDown({
   labelClasses: ["custom-class-1", "custom-class-2"],
   arrowClasses: "custom-class-1",
   menuClasses: ["custom-class-2"],
+  scrollBarClasses: ["custom-class-69", "custom-class-420"],
   inputIdPrefix: "custom-prefix-",
 });
 
@@ -18,6 +19,7 @@ const invalidParamDD = DropDown({
   labelClasses: NaN,
   arrowClasses: { a: 17 },
   menuClasses: null,
+  scrollBarClasses: [23, 24, 25],
   inputIdPrefix: 69,
 });
 
