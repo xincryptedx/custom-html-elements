@@ -98,8 +98,19 @@ const dropDown = (passedOptions) => {
 
   // #region Create the html
   // Method for creating menu elements
-  const createMenu = () => {
-    // Create the menu
+  const createMenu = (menuElement) => {
+    for (let i = 0; i < validatedData.length; i += 1) {
+      // Opt Group
+      if (validatedData[i].startsWith("#")) {
+        // Create opt group
+      } // Divider
+      else if (validatedData[i] === "_") {
+        // Create divider
+      } // Option
+      else {
+        // Create Option
+      }
+    }
   };
 
   // Parent
