@@ -7,7 +7,8 @@ const validateMenuData = (defaultData, passedData) => {
   // Check each entry and remove non strings
   for (let i = 0; i < validatedData.length; i += 1) {
     if (typeof validatedData[i] !== "string") {
-      validatedData[i].pop();
+      validatedData.pop(validatedData[i]);
+      i = -1;
     }
   }
 
