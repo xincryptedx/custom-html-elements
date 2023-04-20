@@ -4,7 +4,7 @@ import generateDefaultStyle from "./generateDefaultStyle";
 import arrowSvg from "./arrow.svg";
 
 const dropDown = (passedOptions, passedData) => {
-  // #region Options, data, and style
+  // #region Default options, data, and style
   const defaultOptions = {
     // Classes - Key must end with "Classes" for validation
     parentClasses: "drop-down",
@@ -25,11 +25,13 @@ const dropDown = (passedOptions, passedData) => {
     placeholderText: "--Select--",
   };
 
+  // Validate passed options with sub module
   const validatedOptions = validateOptions(defaultOptions, passedOptions);
 
   // Menu Data
   const defaultData = ["Invalid", "Or", "Missing", "Menu", "Data"];
 
+  // Validate passed data with sub module
   const validatedData = validateMenuData(defaultData, passedData);
 
   // Use submodule to generate style rules for this drop down
