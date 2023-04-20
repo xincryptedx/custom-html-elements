@@ -52,6 +52,7 @@ const dropDown = (passedOptions, passedData) => {
   // #endregion
 
   // #region Helper methods
+  // Add classes to html element
   const addClasses = (classes, element) => {
     const classesToAdd = [];
     if (typeof classes === "string") {
@@ -69,11 +70,13 @@ const dropDown = (passedOptions, passedData) => {
     }
   };
 
+  // All the unique ids used by drop down inputs and labels
   const generatedIds = document.querySelectorAll(
     `[id^="${validatedOptions.inputIdPrefix}"],
      [for^="${validatedOptions.inputIdPrefix}"]`
   );
 
+  // Generate a unique id for an input and its label
   const generateId = () => {
     let randomizedString = Math.random().toString(36).substring(2, 32);
     let newId = `${validatedOptions.inputIdPrefix}${randomizedString}`;
@@ -89,10 +92,7 @@ const dropDown = (passedOptions, passedData) => {
     return newId;
   };
 
-  // #endregion
-
-  // #region Create the html
-  // Method for creating menu html elements
+  // Create menu html elements
   const createMenu = (menuElement) => {
     for (let i = 0; i < validatedData.length; i += 1) {
       // Option Group
@@ -116,6 +116,9 @@ const dropDown = (passedOptions, passedData) => {
     }
   };
 
+  // #endregion
+
+  // #region Create the html
   // Parent
   const element = document.createElement("div");
   addClasses(validatedOptions.parentClasses, element);
@@ -167,6 +170,10 @@ const dropDown = (passedOptions, passedData) => {
   const feedback = document.createElement("p");
   addClasses(validatedOptions.feedbackClasses, feedback);
   element.appendChild(feedback);
+
+  // #endregion
+
+  // #region Style the html elements
 
   // #endregion
 
