@@ -32,6 +32,7 @@ const dropDown = (passedOptions, passedData) => {
 
   const validatedData = validateMenuData(defaultData, passedData);
 
+  // Use submodule to generate style rules for this drop down
   generateDefaultStyle(validatedOptions);
 
   // #endregion
