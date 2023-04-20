@@ -3,7 +3,7 @@ import validateMenuData from "./validateMenuData";
 import arrowSvg from "./arrow.svg";
 
 const dropDown = (passedOptions, passedData) => {
-  // #region Options and Data
+  // #region Options, data, and style
   const defaultOptions = {
     // Classes - Key must end with "Classes" for validation
     parentClasses: "drop-down",
@@ -30,6 +30,23 @@ const dropDown = (passedOptions, passedData) => {
   const defaultData = ["Invalid", "Or", "Missing", "Menu", "Data"];
 
   const validatedData = validateMenuData(defaultData, passedData);
+
+  // Default styles
+  // Reset css style
+  const resetStyle = {
+    margin: "0",
+    padding: "0",
+    border: "0",
+    fontSize: "100%",
+    font: "inherit",
+    verticalAlign: "baseline",
+  };
+
+  // Optgroup
+  let optgroupStyle = {
+    fontWeight: "bold",
+  };
+  optgroupStyle = { ...resetStyle, ...optgroupStyle };
 
   // #endregion
 
