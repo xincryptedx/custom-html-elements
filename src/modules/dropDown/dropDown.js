@@ -1,7 +1,8 @@
 import validateOptions from "./validateOptions";
+import validateMenuData from "./validateMenuData";
 import arrowSvg from "./arrow.svg";
 
-const dropDown = (passedOptions) => {
+const dropDown = (passedOptions, passedData) => {
   // #region Options and Data
   const defaultOptions = {
     // Classes - Key must end with "Classes" for validation
@@ -37,7 +38,7 @@ const dropDown = (passedOptions) => {
     "Option 2",
   ];
 
-  const validatedData = defaultData;
+  const validatedData = validateMenuData(defaultData, passedData);
 
   // #endregion
 
