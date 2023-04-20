@@ -178,8 +178,6 @@ const dropDown = (passedOptions) => {
 
   // #endregion
 
-  // Style the element and children
-
   // Methods for altering after creation
 
   return {
