@@ -12,6 +12,7 @@ const dropDown = (passedOptions) => {
     arrowClasses: "drop-down-arrow",
     menuClasses: "drop-down-menu",
     scrollBarClasses: "drop-down-scroll-bar",
+    feedbackClasses: "drop-down-feedback",
 
     // IDs
     inputIdPrefix: "drop-down-input-",
@@ -124,7 +125,11 @@ const dropDown = (passedOptions) => {
   menu.appendChild(scrollBar);
 
   //   **menu items, cagetgories, and dividers created from menu data property**
+
   // feedback text
+  const feedback = document.createElement("p");
+  addClasses(validatedOptions.feedbackClasses, feedback);
+  element.appendChild(feedback);
 
   // Style the element and children
 
