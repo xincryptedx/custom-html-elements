@@ -36,7 +36,7 @@ const dropDown = (passedOptions, passedData) => {
   .${validatedOptions.parentClasses.toString()} {
   margin: 0;
   padding: 0;
-  background-color: black;
+  background-color: grey;
 }`;
 
   // If default styles tag doesn't exist, create it and add rules for this drop down
