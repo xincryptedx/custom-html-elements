@@ -29,7 +29,7 @@ const validateOptions = (defaultOptions, passedOptions) => {
     return true;
   };
 
-  // Iterate through validated options keys and validate them
+  // Iterate through validated options keys and validate them by setting their value to the default
   Object.keys(validatedOptions).forEach((key) => {
     if (key.endsWith("Classes")) {
       if (!validateClasslist(validatedOptions[key])) {

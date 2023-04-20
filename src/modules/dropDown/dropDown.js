@@ -101,9 +101,13 @@ const dropDown = (passedOptions) => {
   }
   selection.setAttribute("id", inputId);
   addClasses(validatedOptions.selectionClasses, selection);
-  element.appendChild(selection);
+  container.appendChild(selection);
 
   //   arrow
+  const arrow = document.createElement("img");
+
+  container.appendChild(arrow);
+
   // dropdown menu
   //   scroll bar
   //   **menu items, cagetgories, and dividers created from menu data property**
