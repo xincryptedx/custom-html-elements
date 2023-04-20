@@ -34,6 +34,8 @@ const dropDown = (passedOptions) => {
     "Option 2",
   ];
 
+  const validatedData = defaultData;
+
   // #endregion
 
   // #region Properties
