@@ -27,16 +27,7 @@ const dropDown = (passedOptions, passedData) => {
   const validatedOptions = validateOptions(defaultOptions, passedOptions);
 
   // Menu Data
-  const defaultData = [
-    "#Group 1",
-    "Option 1",
-    "Option 2",
-    "_",
-    "Option 3",
-    "#Group 2",
-    "Option 1",
-    "Option 2",
-  ];
+  const defaultData = ["Invalid", "Or", "Missing", "Menu", "Data"];
 
   const validatedData = validateMenuData(defaultData, passedData);
 
