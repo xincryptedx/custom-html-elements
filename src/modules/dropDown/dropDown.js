@@ -134,9 +134,10 @@ const dropDown = (passedOptions, passedData) => {
   };
 
   const styleMenuItem = (itemToStyle, itemType) => {
+    const item = itemToStyle;
     switch (itemType) {
       case "optgroup":
-        // Code
+        Object.assign(item.style, optgroupStyle);
         break;
       case "divider":
         // Code
