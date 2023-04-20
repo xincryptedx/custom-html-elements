@@ -9,6 +9,7 @@ const dropDown = (passedOptions) => {
     containerClasses: "drop-down-container",
     labelClasses: "drop-down-label",
     selectionClasses: "drop-down-selection",
+    arrowClasses: "drop-down-arrow",
 
     // IDs
     inputIdPrefix: "drop-down-input-",
@@ -107,6 +108,7 @@ const dropDown = (passedOptions) => {
   //   arrow
   const arrow = document.createElement("img");
   arrow.src = arrowSvg;
+  addClasses(validatedOptions.arrowClasses, arrow);
   container.appendChild(arrow);
 
   // dropdown menu
