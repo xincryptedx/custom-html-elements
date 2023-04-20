@@ -1,4 +1,5 @@
 import validateOptions from "./validateOptions";
+import arrowSvg from "./arrow.svg";
 
 const dropDown = (passedOptions) => {
   // #region Options
@@ -105,7 +106,7 @@ const dropDown = (passedOptions) => {
 
   //   arrow
   const arrow = document.createElement("img");
-
+  arrow.src = arrowSvg;
   container.appendChild(arrow);
 
   // dropdown menu
