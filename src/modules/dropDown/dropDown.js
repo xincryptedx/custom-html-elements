@@ -109,6 +109,24 @@ const dropDown = (passedOptions, passedData) => {
     return newId;
   };
 
+  // Style menu items
+  const styleMenuItem = (itemToStyle, itemType) => {
+    const item = itemToStyle;
+    switch (itemType) {
+      case "optgroup":
+        Object.assign(item.style, optgroupStyle);
+        break;
+      case "divider":
+        // Code
+        break;
+      case "option":
+        // Code
+        break;
+      default:
+        break;
+    }
+  };
+
   // Create menu html elements
   const createMenu = (menuElement) => {
     for (let i = 0; i < validatedData.length; i += 1) {
@@ -130,23 +148,6 @@ const dropDown = (passedOptions, passedData) => {
         option.textContent = validatedData[i];
         menuElement.appendChild(option);
       }
-    }
-  };
-
-  const styleMenuItem = (itemToStyle, itemType) => {
-    const item = itemToStyle;
-    switch (itemType) {
-      case "optgroup":
-        Object.assign(item.style, optgroupStyle);
-        break;
-      case "divider":
-        // Code
-        break;
-      case "option":
-        // Code
-        break;
-      default:
-        break;
     }
   };
 
