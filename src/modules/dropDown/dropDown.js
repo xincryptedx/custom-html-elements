@@ -103,15 +103,23 @@ const dropDown = (passedOptions) => {
   // Method for creating menu elements
   const createMenu = (menuElement) => {
     for (let i = 0; i < validatedData.length; i += 1) {
-      // Opt Group
+      // Option Group
       if (validatedData[i].startsWith("#")) {
-        // Create opt group
+        const optgroup = document.createElement("p");
+        addClasses(validatedOptions.optGroupClasses, optgroup);
+        optgroup.textContent = validatedData[i];
+        menuElement.appendChild(optgroup);
       } // Divider
       else if (validatedData[i] === "_") {
-        // Create divider
+        const divider = document.createElement("div");
+        addClasses(validatedOptions.dividerClasses, divider);
+        menuElement.appendChild(divider);
       } // Option
       else {
-        // Create Option
+        const option = document.createElement("p");
+        addClasses(validatedOptions.optionClasses, option);
+        option.textContent = validatedData[i];
+        menuElement.appendChild(option);
       }
     }
   };
