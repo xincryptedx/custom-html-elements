@@ -2,7 +2,7 @@ import validateOptions from "./validateOptions";
 import arrowSvg from "./arrow.svg";
 
 const dropDown = (passedOptions) => {
-  // #region Options
+  // #region Options and Data
   const defaultOptions = {
     // Classes - Key must end with "Classes" for validation
     parentClasses: "drop-down",
@@ -16,9 +16,23 @@ const dropDown = (passedOptions) => {
 
     // IDs
     inputIdPrefix: "drop-down-input-",
+
+    placeholderText: "--Select--",
   };
 
   const validatedOptions = validateOptions(defaultOptions, passedOptions);
+
+  // Menu Data
+  const defaultData = [
+    "#Group 1",
+    "Option 1",
+    "Option 2",
+    "_",
+    "Option 3",
+    "#Group 2",
+    "Option 1",
+    "Option 2",
+  ];
 
   // #endregion
 
