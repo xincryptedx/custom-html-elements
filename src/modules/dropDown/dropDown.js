@@ -10,6 +10,7 @@ const dropDown = (passedOptions) => {
     labelClasses: "drop-down-label",
     selectionClasses: "drop-down-selection",
     arrowClasses: "drop-down-arrow",
+    menuClasses: "drop-down-menu",
 
     // IDs
     inputIdPrefix: "drop-down-input-",
@@ -112,6 +113,10 @@ const dropDown = (passedOptions) => {
   container.appendChild(arrow);
 
   // dropdown menu
+  const menu = document.createElement("div");
+  addClasses(validatedOptions.menuClasses, menu);
+  element.appendChild(menu);
+
   //   scroll bar
   //   **menu items, cagetgories, and dividers created from menu data property**
   // feedback text
