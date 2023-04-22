@@ -1,12 +1,12 @@
-const generateDefaultStyle = (validatedOptions) => {
+const generateDefaultStyle = (generatedStyleClasses) => {
   // Default styles based on variable class names
   const defaultParentStyle = `
-  .${validatedOptions.parentClasses.toString()} {
+  .${generatedStyleClasses.parentClasses.toString()} {
   background-color: grey;
 }`;
 
   const defaultContainerStyle = `
-.${validatedOptions.containerClasses.toString()} {
+.${generatedStyleClasses.containerClasses.toString()} {
   background-color: green;
 }`;
 
@@ -37,7 +37,7 @@ const generateDefaultStyle = (validatedOptions) => {
 
     if (
       !defaultStylesTag.innerHTML.includes(
-        validatedOptions.parentClasses.toString()
+        generatedStyleClasses.parentClasses.toString()
       )
     ) {
       stylesToAdd += defaultParentStyle;

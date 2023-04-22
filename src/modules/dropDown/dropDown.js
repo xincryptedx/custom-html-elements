@@ -4,7 +4,7 @@ import generateDefaultStyle from "./generateDefaultStyle";
 import arrowSvg from "./arrow.svg";
 
 const dropDown = (passedOptions, passedData) => {
-  // #region Default options, data, and style
+  // #region Default options and data
   const defaultOptions = {
     // Classes - Key must end with "Classes" for validation
     parentClasses: "drop-down",
@@ -34,9 +34,6 @@ const dropDown = (passedOptions, passedData) => {
   // Validate passed data with sub module
   const validatedData = validateMenuData(defaultData, passedData);
 
-  // Use submodule to generate style rules for this drop down
-  generateDefaultStyle(validatedOptions);
-
   // #endregion
 
   // #region Properties
@@ -59,15 +56,15 @@ const dropDown = (passedOptions, passedData) => {
 
   // #region Helper methods
   // Generate uique class names for styling
-  const generatedClasses = document.querySelectorAll(`[class^="DDSC-"]`);
+  const generatedStyleClasses = document.querySelectorAll(`[class^="DDSC-"]`);
 
   // Generate a unique id for an input and its label
   const generateStyleClassName = () => {
     let randomizedString = Math.random().toString(36).substring(2, 32);
     let newClassName = `DDSC-${randomizedString}`;
 
-    for (let i = 0; i < generatedClasses.length; i += 1) {
-      if (generatedClasses[i].classList.contains(newClassName)) {
+    for (let i = 0; i < generatedStyleClasses.length; i += 1) {
+      if (generatedStyleClasses[i].classList.contains(newClassName)) {
         randomizedString = Math.random().toString(36).substring(2, 32);
         newClassName = `DDSC-${randomizedString}`;
         i = -1;
@@ -219,9 +216,8 @@ const dropDown = (passedOptions, passedData) => {
 
   // #endregion
 
-  // #region Style the html elements
-
-  // #endregion
+  // Use submodule to generate style rules for this drop down
+  generateDefaultStyle(generatedStyleClasses);
 
   // Methods for altering after creation
 
