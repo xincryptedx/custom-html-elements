@@ -58,6 +58,25 @@ const dropDown = (passedOptions, passedData) => {
   // #endregion
 
   // #region Helper methods
+  // Generate uique class names for styling
+  const generatedClasses = document.querySelectorAll(`[class^="DDSC-"]`);
+
+  // Generate a unique id for an input and its label
+  const generateClassName = () => {
+    let randomizedString = Math.random().toString(36).substring(2, 32);
+    let newClassName = `DDSC-${randomizedString}`;
+
+    for (let i = 0; i < generatedClasses.length; i += 1) {
+      if (generatedClasses[i].classList.contains(newClassName)) {
+        randomizedString = Math.random().toString(36).substring(2, 32);
+        newClassName = `${validatedOptions.inputIdPrefix}${randomizedString}`;
+        i = -1;
+      }
+    }
+
+    return newClassName;
+  };
+
   // Add classes to html element
   const addClasses = (classes, element) => {
     const classesToAdd = [];
