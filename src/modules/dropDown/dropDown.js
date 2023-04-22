@@ -1,6 +1,5 @@
 import validateOptions from "./validateOptions";
 import validateMenuData from "./validateMenuData";
-import generateDefaultStyle from "./generateDefaultStyle";
 import arrowSvg from "./arrow.svg";
 
 const dropDown = (passedOptions, passedData) => {
@@ -23,21 +22,6 @@ const dropDown = (passedOptions, passedData) => {
     inputIdPrefix: "drop-down-input-",
 
     placeholderText: "--Select--",
-  };
-
-  // Passed to generateDefaultStyle sub module
-  const generatedStyleClasses = {
-    parentClass: "",
-    containerClass: "",
-    labelClass: "",
-    selectionClass: "",
-    arrowClass: "",
-    menuClass: "",
-    scrollBarClass: "",
-    optGroupClass: "",
-    optionClass: "",
-    dividerClass: "",
-    feedbackClass: "",
   };
 
   // Validate passed options with sub module
@@ -70,26 +54,6 @@ const dropDown = (passedOptions, passedData) => {
   // #endregion
 
   // #region Helper methods
-  // Generate uique class names for styling
-  const elementsWithGeneratedClasses =
-    document.querySelectorAll(`[class^="DDSC-"]`);
-
-  // Generate a unique id for an input and its label
-  const generateStyleClassName = () => {
-    let randomizedString = Math.random().toString(36).substring(2, 32);
-    let newClassName = `DDSC-${randomizedString}`;
-
-    for (let i = 0; i < elementsWithGeneratedClasses.length; i += 1) {
-      if (elementsWithGeneratedClasses[i].classList.contains(newClassName)) {
-        randomizedString = Math.random().toString(36).substring(2, 32);
-        newClassName = `DDSC-${randomizedString}`;
-        i = -1;
-      }
-    }
-
-    return newClassName;
-  };
-
   // Add classes to html element
   const addClasses = (classes, element) => {
     const classesToAdd = [];
@@ -130,24 +94,6 @@ const dropDown = (passedOptions, passedData) => {
     return newId;
   };
 
-  // Style menu items
-  const styleMenuItem = (itemToStyle, itemType) => {
-    const item = itemToStyle;
-    switch (itemType) {
-      case "optgroup":
-        // code
-        break;
-      case "divider":
-        // Code
-        break;
-      case "option":
-        // Code
-        break;
-      default:
-        break;
-    }
-  };
-
   // Create menu html elements
   const createMenu = (menuElement) => {
     for (let i = 0; i < validatedData.length; i += 1) {
@@ -156,7 +102,6 @@ const dropDown = (passedOptions, passedData) => {
         const optgroup = document.createElement("p");
         addClasses(validatedOptions.optGroupClasses, optgroup);
         optgroup.textContent = validatedData[i];
-        styleMenuItem(optgroup, "optgroup");
         menuElement.appendChild(optgroup);
       } // Divider
       else if (validatedData[i] === "_") {
@@ -229,9 +174,6 @@ const dropDown = (passedOptions, passedData) => {
   element.appendChild(feedback);
 
   // #endregion
-
-  // Use submodule to generate style rules for this drop down
-  generateDefaultStyle(elementsWithGeneratedClasses);
 
   // Methods for altering after creation
 
