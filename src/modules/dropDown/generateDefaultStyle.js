@@ -1,6 +1,6 @@
 const generateDefaultStyle = (validatedOptions) => {
   // Default styles based on variable class names
-  const defaultStyles = `
+  const defaultParentStyle = `
   .${validatedOptions.parentClasses.toString()} {
   margin: 0;
   padding: 0;
@@ -13,11 +13,12 @@ const generateDefaultStyle = (validatedOptions) => {
   if (!defaultStylesTag) {
     defaultStylesTag = document.createElement("style");
     defaultStylesTag.id = "default-drop-down-styles";
-    defaultStylesTag.innerHTML = defaultStyles;
+    defaultStylesTag.innerHTML = defaultParentStyle;
 
     document.head.appendChild(defaultStylesTag);
   } else {
-    defaultStylesTag.innerHTML += defaultStyles;
+    // check if defaultstylestag has the rule in its inner html
+    defaultStylesTag.innerHTML += defaultParentStyle;
   }
 };
 
