@@ -25,6 +25,21 @@ const dropDown = (passedOptions, passedData) => {
     placeholderText: "--Select--",
   };
 
+  // Passed to generateDefaultStyle sub module
+  const generatedStyleClasses = {
+    parentClass: "",
+    containerClass: "",
+    labelClass: "",
+    selectionClass: "",
+    arrowClass: "",
+    menuClass: "",
+    scrollBarClass: "",
+    optGroupClass: "",
+    optionClass: "",
+    dividerClass: "",
+    feedbackClass: "",
+  };
+
   // Validate passed options with sub module
   const validatedOptions = validateOptions(defaultOptions, passedOptions);
 
@@ -91,8 +106,6 @@ const dropDown = (passedOptions, passedData) => {
     if (classesToAdd.length > 0) {
       element.classList.add(...classesToAdd);
     }
-
-    element.classList.add(generateStyleClassName());
   };
 
   // All the unique ids used by drop down inputs and labels
