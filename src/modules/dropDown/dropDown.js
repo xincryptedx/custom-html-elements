@@ -69,7 +69,7 @@ const dropDown = (passedOptions, passedData) => {
     for (let i = 0; i < generatedClasses.length; i += 1) {
       if (generatedClasses[i].classList.contains(newClassName)) {
         randomizedString = Math.random().toString(36).substring(2, 32);
-        newClassName = `${validatedOptions.inputIdPrefix}${randomizedString}`;
+        newClassName = `DDSC-${randomizedString}`;
         i = -1;
       }
     }
