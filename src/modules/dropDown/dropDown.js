@@ -62,7 +62,7 @@ const dropDown = (passedOptions, passedData) => {
   const generatedClasses = document.querySelectorAll(`[class^="DDSC-"]`);
 
   // Generate a unique id for an input and its label
-  const generateClassName = () => {
+  const generateStyleClassName = () => {
     let randomizedString = Math.random().toString(36).substring(2, 32);
     let newClassName = `DDSC-${randomizedString}`;
 
@@ -93,6 +93,8 @@ const dropDown = (passedOptions, passedData) => {
     if (classesToAdd.length > 0) {
       element.classList.add(...classesToAdd);
     }
+
+    element.classList.add(generateStyleClassName());
   };
 
   // All the unique ids used by drop down inputs and labels
