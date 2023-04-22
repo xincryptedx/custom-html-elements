@@ -56,15 +56,16 @@ const dropDown = (passedOptions, passedData) => {
 
   // #region Helper methods
   // Generate uique class names for styling
-  const generatedStyleClasses = document.querySelectorAll(`[class^="DDSC-"]`);
+  const elementsWithGeneratedClasses =
+    document.querySelectorAll(`[class^="DDSC-"]`);
 
   // Generate a unique id for an input and its label
   const generateStyleClassName = () => {
     let randomizedString = Math.random().toString(36).substring(2, 32);
     let newClassName = `DDSC-${randomizedString}`;
 
-    for (let i = 0; i < generatedStyleClasses.length; i += 1) {
-      if (generatedStyleClasses[i].classList.contains(newClassName)) {
+    for (let i = 0; i < elementsWithGeneratedClasses.length; i += 1) {
+      if (elementsWithGeneratedClasses[i].classList.contains(newClassName)) {
         randomizedString = Math.random().toString(36).substring(2, 32);
         newClassName = `DDSC-${randomizedString}`;
         i = -1;
@@ -217,7 +218,7 @@ const dropDown = (passedOptions, passedData) => {
   // #endregion
 
   // Use submodule to generate style rules for this drop down
-  generateDefaultStyle(generatedStyleClasses);
+  generateDefaultStyle(elementsWithGeneratedClasses);
 
   // Methods for altering after creation
 
