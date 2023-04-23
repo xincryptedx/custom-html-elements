@@ -171,17 +171,20 @@ const dropDown = (menuData, allowUserSetValues, type) => {
       if (validatedData[i].startsWith("#")) {
         const optgroup = document.createElement("p");
         addClasses(optGroupClasses, optgroup);
+        addClasses(styleClasses.optGroup, optgroup);
         optgroup.textContent = validatedData[i];
         menuElement.appendChild(optgroup);
       } // Divider
       else if (validatedData[i] === "_") {
         const divider = document.createElement("div");
         addClasses(dividerClasses, divider);
+        addClasses(styleClasses.divider, divider);
         menuElement.appendChild(divider);
       } // Option
       else {
         const option = document.createElement("p");
         addClasses(optionClasses, option);
+        addClasses(styleClasses.option, option);
         option.textContent = validatedData[i];
         menuElement.appendChild(option);
       }
@@ -201,12 +204,14 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     const inputId = generateId();
     const label = document.createElement("label");
     addClasses(labelClasses, label);
+    addClasses(styleClasses.label, label);
     label.setAttribute("for", inputId);
     element.appendChild(label);
 
     // Container
     const container = document.createElement("div");
     addClasses(containerClasses, container);
+    addClasses(styleClasses.container, container);
     element.appendChild(container);
 
     // Either a p if standard or text input if autoSuggest, autoComplete, or userSetValues are true
@@ -219,22 +224,26 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     }
     selection.setAttribute("id", inputId);
     addClasses(selectionClasses, selection);
+    addClasses(styleClasses.selection, selection);
     container.appendChild(selection);
 
     // Arrow
     const arrow = document.createElement("img");
     arrow.src = arrowSvg;
     addClasses(arrowClasses, arrow);
+    addClasses(styleClasses.arrow, arrow);
     container.appendChild(arrow);
 
     // Dropdown menu
     const menu = document.createElement("div");
     addClasses(menuClasses, menu);
+    addClasses(styleClasses.menu, menu);
     element.appendChild(menu);
 
     // Scroll bar
     const scrollBar = document.createElement("div");
     addClasses(scrollBarClasses, scrollBar);
+    addClasses(styleClasses.scrollBar, scrollBar);
     menu.appendChild(scrollBar);
 
     // Menu items, cagetgories, and dividers created from menu data
@@ -243,6 +252,7 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     // feedback text
     const feedback = document.createElement("p");
     addClasses(feedbackClasses, feedback);
+    addClasses(styleClasses.feedback, feedback);
     element.appendChild(feedback);
 
     return element;
