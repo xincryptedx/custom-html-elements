@@ -1,9 +1,9 @@
 const randomUniqueString = (arrayOfStrings, length) => {
   // Validate the array of strings
-  if (arrayOfStrings === undefined || arrayOfStrings.length === 0) {
+  if (!Array.isArray(arrayOfStrings)) {
     return null;
   }
-  if (!Number.isInteger(length)) return null;
+  if (!Number.isInteger(length) || length === 0) return null;
 
   // Create a random string that is 12 characters long
   let randomString = "";
