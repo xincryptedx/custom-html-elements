@@ -1,7 +1,7 @@
 import validateMenuData from "./validateMenuData";
 import arrowSvg from "./arrow.svg";
 
-const dropDown = (passedData) => {
+const dropDown = (passedData, type, allowUserSetValues) => {
   // #region Default options and data
   const defaultOptions = {
     // Classes
@@ -17,7 +17,6 @@ const dropDown = (passedData) => {
     dividerClasses: "drop-down-divider",
     feedbackClasses: "drop-down-feedback",
 
-    // IDs
     inputIdPrefix: "drop-down-input-",
 
     placeholderText: "--Select--",
@@ -32,14 +31,24 @@ const dropDown = (passedData) => {
   // #endregion
 
   // #region Properties
-  // --General values--
-  // placeholder text
-  // menu data which will be [value, value, value] or {category: [value], category: [value]}
-
   // --Functional Variations--
-  const autoSuggest = defaultOptions.autoSuggest === true;
-  const autoComplete = defaultOptions.autoComplete === true;
-  const userSetValues = defaultOptions.userSetValues === true;
+  let autoSuggest = false;
+  let autoComplete = false;
+  const userSetValues = !!allowUserSetValues;
+
+  switch (type) {
+    case "autoSuggest":
+      autoSuggest = true;
+      break;
+    case "autoComplete":
+      autoComplete = true;
+      break;
+    default:
+      autoComplete = false;
+      autoSuggest = false;
+      break;
+  }
+
   // Requred bool
 
   // --Style Variations--
