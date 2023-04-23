@@ -59,7 +59,7 @@ const dropDown = (menuData, allowUserSetValues, type) => {
   const stylePrefix = "CEDDS";
 
   const getClassNamesWithPrefix = (prefix) => {
-    const elements = document.querySelectorAll("[class]");
+    const elements = document.querySelectorAll(`[class^="${stylePrefix}"]`);
     const classNames = [];
 
     for (let i = 0; i < elements.length; i += 1) {
@@ -94,8 +94,10 @@ const dropDown = (menuData, allowUserSetValues, type) => {
 
   const generateStyleClassName = () => {
     let existingStrings = getClassNamesWithPrefix(stylePrefix);
+    console.log(existingStrings);
     existingStrings = removePrefix(existingStrings, stylePrefix);
-    const newRandomStr = randomUniqueString(existingStrings);
+    console.log(existingStrings);
+    const newRandomStr = randomUniqueString(existingStrings, 12);
     const className = `${stylePrefix}${newRandomStr}`;
     return className;
   };
