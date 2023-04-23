@@ -97,24 +97,26 @@ const dropDown = (menuData, allowUserSetValues, type) => {
   const generateStyleClassName = () => {
     let existingStrings = getClassNamesWithPrefix(stylePrefix);
     existingStrings = removePrefix(existingStrings, stylePrefix);
+    existingStrings = existingStrings.concat(thisStyleStrings);
     const newRandomStr = randomUniqueString(existingStrings, 12);
     thisStyleStrings.push(newRandomStr);
+    console.log(existingStrings);
     const className = `${stylePrefix}${newRandomStr}`;
     return className;
   };
 
   const styleClasses = {
     parent: generateStyleClassName(),
-    container: "drop-down-container",
-    label: "drop-down-label",
-    selection: "drop-down-selection",
-    arrow: "drop-down-arrow",
-    menu: "drop-down-menu",
-    scrollBar: "drop-down-scroll-bar",
-    optGroup: "drop-down-optgroup",
-    option: "drop-down-option",
-    divider: "drop-down-divider",
-    feedback: "drop-down-feedback",
+    container: generateStyleClassName(),
+    label: generateStyleClassName(),
+    selection: generateStyleClassName(),
+    arrow: generateStyleClassName(),
+    menu: generateStyleClassName(),
+    scrollBar: generateStyleClassName(),
+    optGroup: generateStyleClassName(),
+    option: generateStyleClassName(),
+    divider: generateStyleClassName(),
+    feedback: generateStyleClassName(),
   };
 
   console.dir(styleClasses);
