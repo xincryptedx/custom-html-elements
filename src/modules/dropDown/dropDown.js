@@ -3,7 +3,7 @@ import arrowSvg from "./arrow.svg";
 
 const dropDown = (menuData, allowUserSetValues, type) => {
   // #region Properties
-  // Classes
+  // Public
   const parentClasses = "drop-down";
   const containerClasses = "drop-down-container";
   const labelClasses = "drop-down-label";
@@ -31,7 +31,7 @@ const dropDown = (menuData, allowUserSetValues, type) => {
   let autoComplete = false;
   const userSetValues =
     typeof allowUserSetValues === "boolean" ? allowUserSetValues : false;
-
+  // Set initial states based on params
   switch (type) {
     case "autoSuggest":
       autoSuggest = true;
@@ -45,7 +45,7 @@ const dropDown = (menuData, allowUserSetValues, type) => {
       break;
   }
 
-  // Requred bool
+  const required = false;
 
   // --Style Variations--
   /* detatched bool
