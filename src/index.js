@@ -20,6 +20,7 @@ const dropDownMenu = DropDown(
   false,
   "autoSuggest"
 );
+document.body.appendChild(dropDownMenu.parent);
 
 const invalidParamDD = DropDown(
   {
@@ -37,8 +38,6 @@ const invalidParamDD = DropDown(
 );
 
 const thirdDropDown = DropDown();
-
-document.body.appendChild(dropDownMenu.parent);
 
 document.body.appendChild(invalidParamDD.parent);
 

@@ -93,7 +93,7 @@ const dropDown = (menuData, allowUserSetValues, type) => {
 
     return result;
   };
-
+  // Need to check class names somehow before styling?
   const generateStyleClassName = () => {
     let existingStrings = getClassNamesWithPrefix(stylePrefix);
     existingStrings = removePrefix(existingStrings, stylePrefix);
