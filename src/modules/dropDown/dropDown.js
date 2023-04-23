@@ -3,7 +3,7 @@ import arrowSvg from "./arrow.svg";
 
 const dropDown = (menuData, allowUserSetValues, type) => {
   // #region Properties
-  // Public
+  // Public Properties
   const parentClasses = "drop-down";
   const containerClasses = "drop-down-container";
   const labelClasses = "drop-down-label";
@@ -45,12 +45,29 @@ const dropDown = (menuData, allowUserSetValues, type) => {
       break;
   }
 
+  // Input required in forms?
   const required = false;
 
   // --Style Variations--
   /* detatched bool
    style options enum
    style */
+
+  // Private Properties
+  // Sytyling classes
+  const styleClasses = {
+    parent: "drop-down",
+    container: "drop-down-container",
+    label: "drop-down-label",
+    selection: "drop-down-selection",
+    arrow: "drop-down-arrow",
+    menu: "drop-down-menu",
+    scrollBar: "drop-down-scroll-bar",
+    optGroup: "drop-down-optgroup",
+    option: "drop-down-option",
+    divider: "drop-down-divider",
+    feedback: "drop-down-feedback",
+  };
 
   // #endregion
 
