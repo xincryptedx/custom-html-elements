@@ -1,5 +1,6 @@
 import validateMenuData from "./validateMenuData";
 import arrowSvg from "./arrow.svg";
+import randomUniqueString from "../../randomUniqueString";
 
 const dropDown = (menuData, allowUserSetValues, type) => {
   // #region Properties
@@ -55,6 +56,30 @@ const dropDown = (menuData, allowUserSetValues, type) => {
 
   // Private Properties
   // Sytyling classes
+  const stylePrefix = "CEDDS";
+
+  const getClassNamesWithPrefix = (prefix) => {
+    const elements = document.querySelectorAll("[class]");
+    const classNames = [];
+
+    for (let i = 0; i < elements.length; i += 1) {
+      const elementClassList = elements[i].classList;
+
+      for (let j = 0; j < elementClassList.length; j += 1) {
+        const className = elementClassList[j];
+        if (className.startsWith(prefix)) {
+          classNames.push(className);
+        }
+      }
+    }
+
+    return classNames;
+  };
+
+  const generateStyleClassName = () => {
+    const existingNames = getClassNamesWithPrefix(stylePrefix);
+  };
+
   const styleClasses = {
     parent: "drop-down",
     container: "drop-down-container",
