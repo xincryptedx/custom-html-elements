@@ -1,7 +1,7 @@
 import validateMenuData from "./validateMenuData";
 import arrowSvg from "./arrow.svg";
 
-const dropDown = (passedData, type, allowUserSetValues) => {
+const dropDown = (menuData, type, allowUserSetValues) => {
   // #region Default options and data
   const defaultOptions = {
     // Classes
@@ -26,7 +26,7 @@ const dropDown = (passedData, type, allowUserSetValues) => {
   const defaultData = ["Invalid", "Or", "Missing", "Menu", "Data"];
 
   // Validate passed data with sub module
-  const validatedData = validateMenuData(defaultData, passedData);
+  const validatedData = validateMenuData(defaultData, menuData);
 
   // #endregion
 
