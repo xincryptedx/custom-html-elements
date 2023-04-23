@@ -122,64 +122,67 @@ const dropDown = (menuData, allowUserSetValues, type) => {
   // #endregion
 
   // #region Create the html
-  // Parent
-  const element = document.createElement("div");
-  addClasses(parentClasses, element);
+  const createHTML = () => {
+    // Parent
+    const element = document.createElement("div");
+    addClasses(parentClasses, element);
 
-  // Label
-  const inputId = generateId();
-  const label = document.createElement("label");
-  addClasses(labelClasses, label);
-  label.setAttribute("for", inputId);
-  element.appendChild(label);
+    // Label
+    const inputId = generateId();
+    const label = document.createElement("label");
+    addClasses(labelClasses, label);
+    label.setAttribute("for", inputId);
+    element.appendChild(label);
 
-  // Container
-  const container = document.createElement("div");
-  addClasses(containerClasses, container);
-  element.appendChild(container);
+    // Container
+    const container = document.createElement("div");
+    addClasses(containerClasses, container);
+    element.appendChild(container);
 
-  // Either a p if standard or text input if autoSuggest, autoComplete, or userSetValues are true
-  let selection;
-  if (autoSuggest || autoComplete || userSetValues) {
-    selection = document.createElement("input");
-    selection.setAttribute("type", "text");
-  } else {
-    selection = document.createElement("p");
-  }
-  selection.setAttribute("id", inputId);
-  addClasses(selectionClasses, selection);
-  container.appendChild(selection);
+    // Either a p if standard or text input if autoSuggest, autoComplete, or userSetValues are true
+    let selection;
+    if (autoSuggest || autoComplete || userSetValues) {
+      selection = document.createElement("input");
+      selection.setAttribute("type", "text");
+    } else {
+      selection = document.createElement("p");
+    }
+    selection.setAttribute("id", inputId);
+    addClasses(selectionClasses, selection);
+    container.appendChild(selection);
 
-  // Arrow
-  const arrow = document.createElement("img");
-  arrow.src = arrowSvg;
-  addClasses(arrowClasses, arrow);
-  container.appendChild(arrow);
+    // Arrow
+    const arrow = document.createElement("img");
+    arrow.src = arrowSvg;
+    addClasses(arrowClasses, arrow);
+    container.appendChild(arrow);
 
-  // Dropdown menu
-  const menu = document.createElement("div");
-  addClasses(menuClasses, menu);
-  element.appendChild(menu);
+    // Dropdown menu
+    const menu = document.createElement("div");
+    addClasses(menuClasses, menu);
+    element.appendChild(menu);
 
-  // Scroll bar
-  const scrollBar = document.createElement("div");
-  addClasses(scrollBarClasses, scrollBar);
-  menu.appendChild(scrollBar);
+    // Scroll bar
+    const scrollBar = document.createElement("div");
+    addClasses(scrollBarClasses, scrollBar);
+    menu.appendChild(scrollBar);
 
-  // Menu items, cagetgories, and dividers created from menu data
-  createMenu(menu);
+    // Menu items, cagetgories, and dividers created from menu data
+    createMenu(menu);
 
-  // feedback text
-  const feedback = document.createElement("p");
-  addClasses(feedbackClasses, feedback);
-  element.appendChild(feedback);
+    // feedback text
+    const feedback = document.createElement("p");
+    addClasses(feedbackClasses, feedback);
+    element.appendChild(feedback);
 
+    return element;
+  };
   // #endregion
 
   // Methods for altering after creation
 
   return {
-    element,
+    parent: createHTML(),
   };
 };
 

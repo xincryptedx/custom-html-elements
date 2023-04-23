@@ -38,8 +38,8 @@ const invalidParamDD = DropDown(
 
 const thirdDropDown = DropDown();
 
-document.body.appendChild(dropDownMenu.element);
+document.body.appendChild(dropDownMenu.parent);
 
-document.body.appendChild(invalidParamDD.element);
+document.body.appendChild(invalidParamDD.parent);
 
-document.body.appendChild(thirdDropDown.element);
+document.body.appendChild(thirdDropDown.parent);
