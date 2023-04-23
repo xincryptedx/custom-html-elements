@@ -1,7 +1,7 @@
 import validateMenuData from "./validateMenuData";
 import arrowSvg from "./arrow.svg";
 
-const dropDown = (menuData, type, allowUserSetValues) => {
+const dropDown = (menuData, allowUserSetValues, type) => {
   // #region Properties
   // Classes
   const parentClasses = "drop-down";
@@ -29,7 +29,8 @@ const dropDown = (menuData, type, allowUserSetValues) => {
   // --Functional Variations--
   let autoSuggest = false;
   let autoComplete = false;
-  const userSetValues = !!allowUserSetValues;
+  const userSetValues =
+    typeof allowUserSetValues === "boolean" ? allowUserSetValues : false;
 
   switch (type) {
     case "autoSuggest":

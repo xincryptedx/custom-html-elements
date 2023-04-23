@@ -1,21 +1,25 @@
 import "./styles/style.css";
 import DropDown from "./modules/dropDown/dropDown";
 
-const dropDownMenu = DropDown([
-  "#Fruit",
-  "Apples",
-  "Bananas",
-  "Grapes",
-  "_",
-  "Tomatoes",
-  "Cucumbers",
-  "Bell Peppers",
-  "Corn",
-  "#Vegetables",
-  "Carrots",
-  "Potatoes",
-  "Lettuce",
-]);
+const dropDownMenu = DropDown(
+  [
+    "#Fruit",
+    "Apples",
+    "Bananas",
+    "Grapes",
+    "_",
+    "Tomatoes",
+    "Cucumbers",
+    "Bell Peppers",
+    "Corn",
+    "#Vegetables",
+    "Carrots",
+    "Potatoes",
+    "Lettuce",
+  ],
+  false,
+  "autoSuggest"
+);
 
 const invalidParamDD = DropDown(
   {
