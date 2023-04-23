@@ -2,25 +2,23 @@ import validateMenuData from "./validateMenuData";
 import arrowSvg from "./arrow.svg";
 
 const dropDown = (menuData, type, allowUserSetValues) => {
-  // #region Default options and data
-  const defaultOptions = {
-    // Classes
-    parentClasses: "drop-down",
-    containerClasses: "drop-down-container",
-    labelClasses: "drop-down-label",
-    selectionClasses: "drop-down-selection",
-    arrowClasses: "drop-down-arrow",
-    menuClasses: "drop-down-menu",
-    scrollBarClasses: "drop-down-scroll-bar",
-    optGroupClasses: "drop-down-optgroup",
-    optionClasses: "drop-down-option",
-    dividerClasses: "drop-down-divider",
-    feedbackClasses: "drop-down-feedback",
+  // #region Properties
+  // Classes
+  const parentClasses = "drop-down";
+  const containerClasses = "drop-down-container";
+  const labelClasses = "drop-down-label";
+  const selectionClasses = "drop-down-selection";
+  const arrowClasses = "drop-down-arrow";
+  const menuClasses = "drop-down-menu";
+  const scrollBarClasses = "drop-down-scroll-bar";
+  const optGroupClasses = "drop-down-optgroup";
+  const optionClasses = "drop-down-option";
+  const dividerClasses = "drop-down-divider";
+  const feedbackClasses = "drop-down-feedback";
 
-    inputIdPrefix: "drop-down-input-",
+  const inputIdPrefix = "drop-down-input-";
 
-    placeholderText: "--Select--",
-  };
+  const placeholderText = "--Select--";
 
   // Menu Data
   const defaultData = ["Invalid", "Or", "Missing", "Menu", "Data"];
@@ -28,9 +26,6 @@ const dropDown = (menuData, type, allowUserSetValues) => {
   // Validate passed data with sub module
   const validatedData = validateMenuData(defaultData, menuData);
 
-  // #endregion
-
-  // #region Properties
   // --Functional Variations--
   let autoSuggest = false;
   let autoComplete = false;
@@ -79,19 +74,19 @@ const dropDown = (menuData, type, allowUserSetValues) => {
 
   // All the unique ids used by drop down inputs and labels
   const generatedIds = document.querySelectorAll(
-    `[id^="${defaultOptions.inputIdPrefix}"],
-     [for^="${defaultOptions.inputIdPrefix}"]`
+    `[id^="${inputIdPrefix}"],
+     [for^="${inputIdPrefix}"]`
   );
 
   // Generate a unique id for an input and its label
   const generateId = () => {
     let randomizedString = Math.random().toString(36).substring(2, 32);
-    let newId = `${defaultOptions.inputIdPrefix}${randomizedString}`;
+    let newId = `${inputIdPrefix}${randomizedString}`;
 
     for (let i = 0; i < generatedIds.length; i += 1) {
       if (generatedIds[i].id === newId) {
         randomizedString = Math.random().toString(36).substring(2, 32);
-        newId = `${defaultOptions.inputIdPrefix}${randomizedString}`;
+        newId = `${inputIdPrefix}${randomizedString}`;
         i = -1;
       }
     }
@@ -105,18 +100,18 @@ const dropDown = (menuData, type, allowUserSetValues) => {
       // Option Group
       if (validatedData[i].startsWith("#")) {
         const optgroup = document.createElement("p");
-        addClasses(defaultOptions.optGroupClasses, optgroup);
+        addClasses(optGroupClasses, optgroup);
         optgroup.textContent = validatedData[i];
         menuElement.appendChild(optgroup);
       } // Divider
       else if (validatedData[i] === "_") {
         const divider = document.createElement("div");
-        addClasses(defaultOptions.dividerClasses, divider);
+        addClasses(dividerClasses, divider);
         menuElement.appendChild(divider);
       } // Option
       else {
         const option = document.createElement("p");
-        addClasses(defaultOptions.optionClasses, option);
+        addClasses(optionClasses, option);
         option.textContent = validatedData[i];
         menuElement.appendChild(option);
       }
@@ -128,18 +123,18 @@ const dropDown = (menuData, type, allowUserSetValues) => {
   // #region Create the html
   // Parent
   const element = document.createElement("div");
-  addClasses(defaultOptions.parentClasses, element);
+  addClasses(parentClasses, element);
 
   // Label
   const inputId = generateId();
   const label = document.createElement("label");
-  addClasses(defaultOptions.labelClasses, label);
+  addClasses(labelClasses, label);
   label.setAttribute("for", inputId);
   element.appendChild(label);
 
   // Container
   const container = document.createElement("div");
-  addClasses(defaultOptions.containerClasses, container);
+  addClasses(containerClasses, container);
   element.appendChild(container);
 
   // Either a p if standard or text input if autoSuggest, autoComplete, or userSetValues are true
@@ -151,23 +146,23 @@ const dropDown = (menuData, type, allowUserSetValues) => {
     selection = document.createElement("p");
   }
   selection.setAttribute("id", inputId);
-  addClasses(defaultOptions.selectionClasses, selection);
+  addClasses(selectionClasses, selection);
   container.appendChild(selection);
 
   // Arrow
   const arrow = document.createElement("img");
   arrow.src = arrowSvg;
-  addClasses(defaultOptions.arrowClasses, arrow);
+  addClasses(arrowClasses, arrow);
   container.appendChild(arrow);
 
   // Dropdown menu
   const menu = document.createElement("div");
-  addClasses(defaultOptions.menuClasses, menu);
+  addClasses(menuClasses, menu);
   element.appendChild(menu);
 
   // Scroll bar
   const scrollBar = document.createElement("div");
-  addClasses(defaultOptions.scrollBarClasses, scrollBar);
+  addClasses(scrollBarClasses, scrollBar);
   menu.appendChild(scrollBar);
 
   // Menu items, cagetgories, and dividers created from menu data
@@ -175,7 +170,7 @@ const dropDown = (menuData, type, allowUserSetValues) => {
 
   // feedback text
   const feedback = document.createElement("p");
-  addClasses(defaultOptions.feedbackClasses, feedback);
+  addClasses(feedbackClasses, feedback);
   element.appendChild(feedback);
 
   // #endregion
