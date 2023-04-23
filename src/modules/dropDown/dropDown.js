@@ -58,6 +58,8 @@ const dropDown = (menuData, allowUserSetValues, type) => {
   // Sytyling classes
   const stylePrefix = "CEDDS";
 
+  const thisStyleStrings = [];
+
   const getClassNamesWithPrefix = (prefix) => {
     const elements = document.querySelectorAll(`[class^="${stylePrefix}"]`);
     const classNames = [];
@@ -94,10 +96,9 @@ const dropDown = (menuData, allowUserSetValues, type) => {
 
   const generateStyleClassName = () => {
     let existingStrings = getClassNamesWithPrefix(stylePrefix);
-    console.log(existingStrings);
     existingStrings = removePrefix(existingStrings, stylePrefix);
-    console.log(existingStrings);
     const newRandomStr = randomUniqueString(existingStrings, 12);
+    thisStyleStrings.push(newRandomStr);
     const className = `${stylePrefix}${newRandomStr}`;
     return className;
   };
@@ -192,6 +193,7 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     // Parent
     const element = document.createElement("div");
     addClasses(parentClasses, element);
+    addClasses(styleClasses.parent, element);
 
     // Label
     const inputId = generateId();
