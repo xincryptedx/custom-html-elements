@@ -23,3 +23,5 @@ const randomUniqueString = (arrayOfStrings, length) => {
   // Return the unique generated string
   return randomString;
 };
+
+export default randomUniqueString;
