@@ -71,7 +71,7 @@ const dropDown = (menuData, allowUserSetValues, type) => {
 
   // #endregion
 
-  // #region Helper methods
+  // #region HTML Creation Helper methods
   // Add classes to html element
   const addClasses = (classes, element) => {
     const classesToAdd = [];
