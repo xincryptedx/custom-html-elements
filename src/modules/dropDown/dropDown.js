@@ -179,10 +179,13 @@ const dropDown = (menuData, allowUserSetValues, type) => {
   };
   // #endregion
 
+  // Create the elements
+  const parent = createHTML();
+
   // Methods for altering after creation
 
   return {
-    parent: createHTML(),
+    parent,
   };
 };
 
