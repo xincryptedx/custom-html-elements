@@ -76,12 +76,32 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     return classNames;
   };
 
+  const removePrefix = (strArray, prefix) => {
+    const result = [];
+    const prefixLength = prefix.length;
+
+    for (let i = 0; i < strArray.length; i += 1) {
+      const str = strArray[i];
+      if (str.startsWith(prefix)) {
+        result.push(str.substring(prefixLength));
+      } else {
+        result.push(str);
+      }
+    }
+
+    return result;
+  };
+
   const generateStyleClassName = () => {
-    const existingNames = getClassNamesWithPrefix(stylePrefix);
+    let existingStrings = getClassNamesWithPrefix(stylePrefix);
+    existingStrings = removePrefix(existingStrings, stylePrefix);
+    const newRandomStr = randomUniqueString(existingStrings);
+    const className = `${stylePrefix}${newRandomStr}`;
+    return className;
   };
 
   const styleClasses = {
-    parent: "drop-down",
+    parent: generateStyleClassName(),
     container: "drop-down-container",
     label: "drop-down-label",
     selection: "drop-down-selection",
@@ -93,6 +113,8 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     divider: "drop-down-divider",
     feedback: "drop-down-feedback",
   };
+
+  console.dir(styleClasses);
 
   // #endregion
 
