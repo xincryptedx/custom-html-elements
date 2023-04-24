@@ -7,7 +7,7 @@ const dropDown = (menuData, allowUserSetValues, type) => {
   // Public Properties
   const parentClasses = "drop-down";
 
-  const placeholderText = "--Select--";
+  // const placeholderText = "--Select--";
 
   // Menu Data
   const defaultData = ["Invalid", "Or", "Missing", "Menu", "Data"];
@@ -35,12 +35,13 @@ const dropDown = (menuData, allowUserSetValues, type) => {
   }
 
   // Input required in forms?
-  const required = false;
+  // const required = false;
 
   // --Style Variations--
   /* detatched bool
    style options enum
-   style */
+   style 
+   animated bool */
 
   const styleClasses = {
     container: "container",
