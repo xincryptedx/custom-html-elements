@@ -161,15 +161,8 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     shadowRoot.appendChild(feedback);
 
     // Add event listeners for toggling menu show class
-    element.addEventListener("click", () => {
-      selection.focus();
-    });
-
-    selection.addEventListener("focus", () => {
-      menu.classList.add("show");
-    });
-    selection.addEventListener("blur", () => {
-      menu.classList.remove("show");
+    container.addEventListener("click", () => {
+      menu.classList.toggle("show");
     });
 
     return element;

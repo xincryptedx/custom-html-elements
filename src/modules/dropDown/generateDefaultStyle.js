@@ -55,6 +55,8 @@ const generateDefaultStyle = (styleClasses) => {
         "label"
         "container"
         "feedback";
+
+      position: relative;
     }
     :host([hidden]) { 
       display: none 
