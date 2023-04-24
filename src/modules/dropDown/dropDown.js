@@ -145,7 +145,7 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     // Dropdown menu
     const menu = document.createElement("div");
     addClasses(styleClasses.menu, menu);
-    shadowRoot.appendChild(menu);
+    container.appendChild(menu);
 
     // Scroll bar
     const scrollbar = document.createElement("div");
