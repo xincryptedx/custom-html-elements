@@ -90,6 +90,8 @@ const generateDefaultStyle = (styleClasses) => {
   const menuStyle = `
     .${styleClasses.menu} {
       background-color: lightblue;
+
+      display: none;
     }
   `;
 
