@@ -6,8 +6,6 @@ const dropDown = (menuData, allowUserSetValues, type) => {
   // Public Properties
   const parentClasses = "drop-down";
 
-  const inputIdPrefix = "drop-down-input-";
-
   const placeholderText = "--Select--";
 
   // Menu Data
