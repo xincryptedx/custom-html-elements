@@ -49,7 +49,7 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     arrow: "arrow",
     menu: "menu",
     scrollbar: "scrollbar",
-    optGroup: "optGroup",
+    optgroup: "optgroup",
     option: "option",
     divider: "divider",
     feedback: "feedback",
@@ -82,7 +82,7 @@ const dropDown = (menuData, allowUserSetValues, type) => {
       // Option Group
       if (validatedData[i].startsWith("#")) {
         const optgroup = document.createElement("p");
-        addClasses(styleClasses.optGroup, optgroup);
+        addClasses(styleClasses.optgroup, optgroup);
         optgroup.textContent = validatedData[i];
         menuElement.appendChild(optgroup);
       } // Divider
