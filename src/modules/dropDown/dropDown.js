@@ -106,7 +106,6 @@ const dropDown = (menuData, allowUserSetValues, type) => {
   }; */
 
   const styleClasses = {
-    parent: "parent",
     container: "container",
     label: "label",
     selection: "selection",
@@ -196,7 +195,6 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     // Parent
     const element = document.createElement("div");
     addClasses(parentClasses, element);
-    addClasses(styleClasses.parent, element);
 
     // Label
     const inputId = generateId();
