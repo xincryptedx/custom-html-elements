@@ -170,7 +170,7 @@ const dropDown = (menuData, allowUserSetValues, type) => {
   // Style the elements
   const shadowStyles = document.createElement("style");
   shadowStyles.innerHTML = generateDefaultStyle(styleClasses);
-  console.log(shadowStyles);
+  parent.shadowRoot.appendChild(shadowStyles);
 
   // Methods for altering after creation
 
