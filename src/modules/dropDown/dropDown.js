@@ -56,7 +56,7 @@ const dropDown = (menuData, allowUserSetValues, type) => {
 
   // Private Properties
   // Sytyling classes
-  const stylePrefix = "CEDDS";
+  /*   const stylePrefix = "CEDDS";
 
   const thisStyleStrings = [];
 
@@ -103,23 +103,21 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     console.log(existingStrings);
     const className = `${stylePrefix}${newRandomStr}`;
     return className;
-  };
+  }; */
 
   const styleClasses = {
-    parent: generateStyleClassName(),
-    container: generateStyleClassName(),
-    label: generateStyleClassName(),
-    selection: generateStyleClassName(),
-    arrow: generateStyleClassName(),
-    menu: generateStyleClassName(),
-    scrollBar: generateStyleClassName(),
-    optGroup: generateStyleClassName(),
-    option: generateStyleClassName(),
-    divider: generateStyleClassName(),
-    feedback: generateStyleClassName(),
+    parent: "parent",
+    container: "container",
+    label: "label",
+    selection: "selection",
+    arrow: "arrow",
+    menu: "menu",
+    scrollBar: "scrollBar",
+    optGroup: "optGroup",
+    option: "option",
+    divider: "divider",
+    feedback: "feedback",
   };
-
-  console.dir(styleClasses);
 
   // #endregion
 
