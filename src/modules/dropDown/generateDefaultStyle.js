@@ -87,6 +87,10 @@ const generateDefaultStyle = (styleClasses) => {
     .${styleClasses.arrow} {
       background-color: yellow;
     }
+
+    .${styleClasses.arrow}.flip {
+      rotate: 180deg;
+    }
   `;
 
   const menuStyle = `

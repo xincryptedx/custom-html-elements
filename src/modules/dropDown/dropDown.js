@@ -163,6 +163,8 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     // Add event listeners for toggling menu show class
     container.addEventListener("click", () => {
       menu.classList.toggle("show");
+      if (menu.classList.contains("show")) arrow.classList.add("flip");
+      else arrow.classList.remove("flip");
     });
 
     return element;
