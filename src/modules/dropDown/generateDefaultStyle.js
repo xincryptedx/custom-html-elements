@@ -61,15 +61,17 @@ const generateDefaultStyle = (styleClasses) => {
     }
   `;
 
-  const containerStyle = `
-    .${styleClasses.container} {
-      background-color: green;
-    }
-  `;
-
   const labelStyle = `
     .${styleClasses.label} {
       background-color: red;
+      grid-area: label;
+    }
+  `;
+
+  const containerStyle = `
+    .${styleClasses.container} {
+      background-color: green;
+      grid-area: container;
     }
   `;
 
@@ -118,6 +120,7 @@ const generateDefaultStyle = (styleClasses) => {
   const feedbackStyle = `
     .${styleClasses.feedback} {
       background-color: grey;
+      grid-area: feedback;
     }
   `;
 
