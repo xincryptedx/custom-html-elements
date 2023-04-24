@@ -1,5 +1,6 @@
 import validateMenuData from "./validateMenuData";
 import arrowSvg from "./arrow.svg";
+import generateDefaultStyle from "./generateDefaultStyle";
 
 const dropDown = (menuData, allowUserSetValues, type) => {
   // #region Properties
@@ -165,6 +166,11 @@ const dropDown = (menuData, allowUserSetValues, type) => {
 
   // Create the elements
   const parent = createHTML();
+
+  // Style the elements
+  const shadowStyles = document.createElement("style");
+  shadowStyles.innerHTML = generateDefaultStyle(styleClasses);
+  console.log(shadowStyles);
 
   // Methods for altering after creation
 
