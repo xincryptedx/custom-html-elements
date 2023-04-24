@@ -140,12 +140,12 @@ const dropDown = (menuData, allowUserSetValues, type) => {
   };
 
   // All the unique ids used by drop down inputs and labels
-  const generatedIds = document.querySelectorAll(
+  /*   const generatedIds = document.querySelectorAll(
     `[id^="${inputIdPrefix}"],
      [for^="${inputIdPrefix}"]`
-  );
+  ); */
 
-  // Generate a unique id for an input and its label
+  /*   // Generate a unique id for an input and its label
   const generateId = () => {
     let randomizedString = Math.random().toString(36).substring(2, 32);
     let newId = `${inputIdPrefix}${randomizedString}`;
@@ -159,7 +159,7 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     }
 
     return newId;
-  };
+  }; */
 
   // Create menu html elements
   const createMenu = (menuElement) => {
@@ -200,10 +200,11 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     const shadowRoot = element.attachShadow({ mode: "open" });
 
     // Label
-    const inputId = generateId();
+    const inputId = "selection";
     const label = document.createElement("label");
     addClasses(styleClasses.label, label);
     label.setAttribute("for", inputId);
+    label.textContent = "Label";
     shadowRoot.appendChild(label);
 
     // Container
