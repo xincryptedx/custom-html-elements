@@ -91,7 +91,15 @@ const generateDefaultStyle = (styleClasses) => {
     .${styleClasses.menu} {
       background-color: lightblue;
 
-      display: none;
+      height: 0; 
+      overflow: hidden;
+      visibility: hidden; 
+    }
+
+    .${styleClasses.menu}.show {
+      height: auto;
+      visibility: visible;
+      overflow-y: scroll;
     }
   `;
 
