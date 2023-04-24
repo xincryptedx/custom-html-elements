@@ -37,7 +37,7 @@ const invalidParamDD = DropDown(
   [undefined, null, NaN, 0]
 );
 
-const thirdDropDown = DropDown();
+const thirdDropDown = DropDown([], false, "autoComplete");
 
 document.body.appendChild(invalidParamDD.parent);
 
