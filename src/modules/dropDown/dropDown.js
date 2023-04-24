@@ -6,16 +6,6 @@ const dropDown = (menuData, allowUserSetValues, type) => {
   // #region Properties
   // Public Properties
   const parentClasses = "drop-down";
-  const containerClasses = "drop-down-container";
-  const labelClasses = "drop-down-label";
-  const selectionClasses = "drop-down-selection";
-  const arrowClasses = "drop-down-arrow";
-  const menuClasses = "drop-down-menu";
-  const scrollBarClasses = "drop-down-scroll-bar";
-  const optGroupClasses = "drop-down-optgroup";
-  const optionClasses = "drop-down-option";
-  const dividerClasses = "drop-down-divider";
-  const feedbackClasses = "drop-down-feedback";
 
   const inputIdPrefix = "drop-down-input-";
 
@@ -167,20 +157,17 @@ const dropDown = (menuData, allowUserSetValues, type) => {
       // Option Group
       if (validatedData[i].startsWith("#")) {
         const optgroup = document.createElement("p");
-        addClasses(optGroupClasses, optgroup);
         addClasses(styleClasses.optGroup, optgroup);
         optgroup.textContent = validatedData[i];
         menuElement.appendChild(optgroup);
       } // Divider
       else if (validatedData[i] === "_") {
         const divider = document.createElement("div");
-        addClasses(dividerClasses, divider);
         addClasses(styleClasses.divider, divider);
         menuElement.appendChild(divider);
       } // Option
       else {
         const option = document.createElement("p");
-        addClasses(optionClasses, option);
         addClasses(styleClasses.option, option);
         option.textContent = validatedData[i];
         menuElement.appendChild(option);
