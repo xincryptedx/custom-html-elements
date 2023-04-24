@@ -98,15 +98,15 @@ const generateDefaultStyle = (styleClasses) => {
     .${styleClasses.menu} {
       background-color: lightblue;
 
-      height: 0; 
+      max-height: 0; 
       overflow: hidden;
-      visibility: hidden; 
+      transition: max-height 0.5s cubic-bezier(0.1,-0.28, 0.23, 1.35);
     }
 
     .${styleClasses.menu}.show {
-      height: auto;
-      visibility: visible;
+      max-height: 500px;
       overflow-y: scroll;
+      transition: max-height 0.5s cubic-bezier(0.1,-0.28, 0.23, 1.35);
     }
   `;
 
