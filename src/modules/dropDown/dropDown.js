@@ -202,14 +202,12 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     // Label
     const inputId = generateId();
     const label = document.createElement("label");
-    addClasses(labelClasses, label);
     addClasses(styleClasses.label, label);
     label.setAttribute("for", inputId);
     shadowRoot.appendChild(label);
 
     // Container
     const container = document.createElement("div");
-    addClasses(containerClasses, container);
     addClasses(styleClasses.container, container);
     shadowRoot.appendChild(container);
 
@@ -222,26 +220,22 @@ const dropDown = (menuData, allowUserSetValues, type) => {
       selection = document.createElement("p");
     }
     selection.setAttribute("id", inputId);
-    addClasses(selectionClasses, selection);
     addClasses(styleClasses.selection, selection);
     container.appendChild(selection);
 
     // Arrow
     const arrow = document.createElement("img");
     arrow.src = arrowSvg;
-    addClasses(arrowClasses, arrow);
     addClasses(styleClasses.arrow, arrow);
     container.appendChild(arrow);
 
     // Dropdown menu
     const menu = document.createElement("div");
-    addClasses(menuClasses, menu);
     addClasses(styleClasses.menu, menu);
     shadowRoot.appendChild(menu);
 
     // Scroll bar
     const scrollBar = document.createElement("div");
-    addClasses(scrollBarClasses, scrollBar);
     addClasses(styleClasses.scrollBar, scrollBar);
     menu.appendChild(scrollBar);
 
@@ -250,7 +244,6 @@ const dropDown = (menuData, allowUserSetValues, type) => {
 
     // feedback text
     const feedback = document.createElement("p");
-    addClasses(feedbackClasses, feedback);
     addClasses(styleClasses.feedback, feedback);
     shadowRoot.appendChild(feedback);
 
