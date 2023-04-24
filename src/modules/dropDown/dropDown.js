@@ -43,57 +43,6 @@ const dropDown = (menuData, allowUserSetValues, type) => {
    style options enum
    style */
 
-  // Private Properties
-  // Sytyling classes
-  /*   const stylePrefix = "CEDDS";
-
-  const thisStyleStrings = [];
-
-  const getClassNamesWithPrefix = (prefix) => {
-    const elements = document.querySelectorAll(`[class^="${stylePrefix}"]`);
-    const classNames = [];
-
-    for (let i = 0; i < elements.length; i += 1) {
-      const elementClassList = elements[i].classList;
-
-      for (let j = 0; j < elementClassList.length; j += 1) {
-        const className = elementClassList[j];
-        if (className.startsWith(prefix)) {
-          classNames.push(className);
-        }
-      }
-    }
-
-    return classNames;
-  };
-
-  const removePrefix = (strArray, prefix) => {
-    const result = [];
-    const prefixLength = prefix.length;
-
-    for (let i = 0; i < strArray.length; i += 1) {
-      const str = strArray[i];
-      if (str.startsWith(prefix)) {
-        result.push(str.substring(prefixLength));
-      } else {
-        result.push(str);
-      }
-    }
-
-    return result;
-  };
-  // Need to check class names somehow before styling?
-  const generateStyleClassName = () => {
-    let existingStrings = getClassNamesWithPrefix(stylePrefix);
-    existingStrings = removePrefix(existingStrings, stylePrefix);
-    existingStrings = existingStrings.concat(thisStyleStrings);
-    const newRandomStr = randomUniqueString(existingStrings, 12);
-    thisStyleStrings.push(newRandomStr);
-    console.log(existingStrings);
-    const className = `${stylePrefix}${newRandomStr}`;
-    return className;
-  }; */
-
   const styleClasses = {
     container: "container",
     label: "label",
@@ -127,28 +76,6 @@ const dropDown = (menuData, allowUserSetValues, type) => {
       element.classList.add(...classesToAdd);
     }
   };
-
-  // All the unique ids used by drop down inputs and labels
-  /*   const generatedIds = document.querySelectorAll(
-    `[id^="${inputIdPrefix}"],
-     [for^="${inputIdPrefix}"]`
-  ); */
-
-  /*   // Generate a unique id for an input and its label
-  const generateId = () => {
-    let randomizedString = Math.random().toString(36).substring(2, 32);
-    let newId = `${inputIdPrefix}${randomizedString}`;
-
-    for (let i = 0; i < generatedIds.length; i += 1) {
-      if (generatedIds[i].id === newId) {
-        randomizedString = Math.random().toString(36).substring(2, 32);
-        newId = `${inputIdPrefix}${randomizedString}`;
-        i = -1;
-      }
-    }
-
-    return newId;
-  }; */
 
   // Create menu html elements
   const createMenu = (menuElement) => {
