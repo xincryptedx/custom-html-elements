@@ -196,19 +196,22 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     const element = document.createElement("div");
     addClasses(parentClasses, element);
 
+    // Attatch shadow root to encapsulate children and style
+    const shadowRoot = element.attachShadow({ mode: "open" });
+
     // Label
     const inputId = generateId();
     const label = document.createElement("label");
     addClasses(labelClasses, label);
     addClasses(styleClasses.label, label);
     label.setAttribute("for", inputId);
-    element.appendChild(label);
+    shadowRoot.appendChild(label);
 
     // Container
     const container = document.createElement("div");
     addClasses(containerClasses, container);
     addClasses(styleClasses.container, container);
-    element.appendChild(container);
+    shadowRoot.appendChild(container);
 
     // Either a p if standard or text input if autoSuggest, autoComplete, or userSetValues are true
     let selection;
@@ -234,7 +237,7 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     const menu = document.createElement("div");
     addClasses(menuClasses, menu);
     addClasses(styleClasses.menu, menu);
-    element.appendChild(menu);
+    shadowRoot.appendChild(menu);
 
     // Scroll bar
     const scrollBar = document.createElement("div");
@@ -249,7 +252,7 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     const feedback = document.createElement("p");
     addClasses(feedbackClasses, feedback);
     addClasses(styleClasses.feedback, feedback);
-    element.appendChild(feedback);
+    shadowRoot.appendChild(feedback);
 
     return element;
   };
