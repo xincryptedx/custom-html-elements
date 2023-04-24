@@ -160,6 +160,18 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     addClasses(styleClasses.feedback, feedback);
     shadowRoot.appendChild(feedback);
 
+    // Add event listeners for toggling menu show class
+    element.addEventListener("click", () => {
+      selection.focus();
+    });
+
+    selection.addEventListener("focus", () => {
+      menu.classList.add("show");
+    });
+    selection.addEventListener("blur", () => {
+      menu.classList.remove("show");
+    });
+
     return element;
   };
   // #endregion
