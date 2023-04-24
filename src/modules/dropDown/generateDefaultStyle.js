@@ -49,7 +49,12 @@ const generateDefaultStyle = (styleClasses) => {
 
   const parentStyle = `
     :host {
-      background-color: grey;
+      display: grid;
+      grid-template: 1rem auto 1rem / 1fr;
+      grid-template-areas:
+        "label"
+        "container"
+        "feedback";
     }
     :host([hidden]) { 
       display: none 
