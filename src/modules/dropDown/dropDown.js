@@ -1,6 +1,5 @@
 import validateMenuData from "./validateMenuData";
 import arrowSvg from "./arrow.svg";
-import randomUniqueString from "../../randomUniqueString";
 
 const dropDown = (menuData, allowUserSetValues, type) => {
   // #region Properties
