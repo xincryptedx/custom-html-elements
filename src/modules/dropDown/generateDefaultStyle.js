@@ -85,7 +85,8 @@ const generateDefaultStyle = (styleClasses) => {
 
   const arrowStyle = `
     .${styleClasses.arrow} {
-      background-color: yellow;
+      background-color: transparent;
+      transition: 0.5s cubic-bezier(0.1,-0.28, 0.23, 1.35);
     }
 
     .${styleClasses.arrow}.flip {
