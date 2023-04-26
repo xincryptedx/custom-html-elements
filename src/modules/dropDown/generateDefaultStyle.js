@@ -111,6 +111,12 @@ const generateDefaultStyle = (styleClasses) => {
     .${styleClasses.menu}.show {
       max-height: 500px;
       overflow-y: scroll;
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+
+    .${styleClasses.menu}::-webkit-scrollbar {
+      display: none;
     }
   `;
 
