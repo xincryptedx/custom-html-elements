@@ -100,7 +100,7 @@ const generateDefaultStyle = (styleClasses) => {
 
       max-height: 0; 
       overflow: hidden;
-      transition: max-height 0.5s cubic-bezier(0.1,-0.28, 0.23, 1.35);
+      transition: max-height 0.5s ease-in-out;
     }
 
     .${styleClasses.menu}.show {
