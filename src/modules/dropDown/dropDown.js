@@ -203,6 +203,12 @@ const dropDown = (menuData, allowUserSetValues, type) => {
 
   return {
     parent,
+    get zIndex() {
+      return styleOptions.zIndex;
+    },
+    set zIndex(value) {
+      if (Number.isInteger(value)) styleOptions.zIndex = value;
+    },
   };
 };
 
