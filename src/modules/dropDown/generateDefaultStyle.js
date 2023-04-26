@@ -118,12 +118,13 @@ const generateDefaultStyle = (styleClasses) => {
       z-index: 2;
 
       max-height: 0; 
+      width: 100%;
       overflow: hidden;
       transition: max-height 0.5s ease-in-out;
     }
 
     .${styleClasses.menu}.show {
-      max-height: 500px;
+      max-height: 150px;
       overflow-y: scroll;
       -ms-overflow-style: none;  /* IE and Edge */
       scrollbar-width: none;  /* Firefox */
