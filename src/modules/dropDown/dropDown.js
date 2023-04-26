@@ -104,6 +104,23 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     }
   };
 
+  const dropDownClicked = (menu, arrow) => {
+    menu.classList.toggle("show");
+    if (menu.classList.contains("show")) arrow.classList.add("flip");
+    else arrow.classList.remove("flip");
+
+    document.addEventListener(
+      "mouseup",
+      () => {
+        if (menu.classList.contains("show")) {
+          menu.classList.toggle("show");
+          arrow.classList.remove("flip");
+        }
+      },
+      { once: true }
+    );
+  };
+
   // #endregion
 
   // #region Create the html
@@ -171,20 +188,7 @@ const dropDown = (menuData, allowUserSetValues, type) => {
 
     // Add event listeners for toggling menu show class
     container.addEventListener("click", () => {
-      menu.classList.toggle("show");
-      if (menu.classList.contains("show")) arrow.classList.add("flip");
-      else arrow.classList.remove("flip");
-
-      document.addEventListener(
-        "mouseup",
-        () => {
-          if (menu.classList.contains("show")) {
-            menu.classList.toggle("show");
-            arrow.classList.remove("flip");
-          }
-        },
-        { once: true }
-      );
+      dropDownClicked(menu, arrow);
     });
 
     return element;
