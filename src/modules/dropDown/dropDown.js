@@ -213,6 +213,7 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     },
     set zIndex(value) {
       if (Number.isInteger(value)) styleOptions.zIndex = value;
+      setShadowStyle();
     },
   };
 };
