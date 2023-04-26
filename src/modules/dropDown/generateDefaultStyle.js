@@ -74,6 +74,8 @@ const generateDefaultStyle = (styleClasses) => {
     .${styleClasses.container} {
       background-color: green;
       grid-area: container;
+
+      height: 32px;
     }
   `;
 
@@ -102,6 +104,7 @@ const generateDefaultStyle = (styleClasses) => {
       grid-auto-rows: 1.1rem;
 
       position: relative;
+      z-index: 2;
 
       max-height: 0; 
       overflow: hidden;
