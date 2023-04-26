@@ -37,7 +37,9 @@ const dropDown = (menuData, allowUserSetValues, type) => {
   // Input required in forms?
   // const required = false;
 
-  // --Style Variations--
+  const styleOptions = {
+    zIndex: 2,
+  };
   /* detatched bool
    style options enum
    style 
@@ -194,7 +196,7 @@ const dropDown = (menuData, allowUserSetValues, type) => {
 
   // Style the elements
   const shadowStyles = document.createElement("style");
-  shadowStyles.innerHTML = generateDefaultStyle(styleClasses);
+  shadowStyles.innerHTML = generateDefaultStyle(styleClasses, styleOptions);
   parent.shadowRoot.appendChild(shadowStyles);
 
   // Methods for altering after creation

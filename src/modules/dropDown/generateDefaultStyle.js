@@ -1,4 +1,4 @@
-const generateDefaultStyle = (styleClasses) => {
+const generateDefaultStyle = (styleClasses, options) => {
   // #region CSS Reset
   const resetStyle = `
   html, body, div, span, applet, object, iframe,
@@ -129,7 +129,7 @@ const generateDefaultStyle = (styleClasses) => {
       display: grid;
       grid-auto-rows: 1.1rem;
 
-      z-index: 2;
+      z-index: ${options.zIndex};
 
       max-height: 0; 
       overflow: hidden;
@@ -179,7 +179,7 @@ const generateDefaultStyle = (styleClasses) => {
     }
 
     .${styleClasses.menu}.show + .${styleClasses.feedback} {
-      z-index: 2;
+      z-index: ${options.zIndex};
     }
   `;
 
