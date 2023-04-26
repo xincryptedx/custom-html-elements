@@ -54,6 +54,7 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     option: "option",
     divider: "divider",
     feedback: "feedback",
+    menuAndFeedbackContainer: "menuAndFeedbackContainer",
   };
 
   // #endregion
@@ -143,10 +144,15 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     addClasses(styleClasses.arrow, arrow);
     container.appendChild(arrow);
 
+    // Div that holds menu and feedback so they can both expand over top of other elements
+    const menuAndFeedbackContainer = document.createElement("div");
+    addClasses(styleClasses.menuAndFeedbackContainer, menuAndFeedbackContainer);
+    shadowRoot.appendChild(menuAndFeedbackContainer);
+
     // Dropdown menu
     const menu = document.createElement("div");
     addClasses(styleClasses.menu, menu);
-    shadowRoot.appendChild(menu);
+    menuAndFeedbackContainer.appendChild(menu);
 
     // Scroll bar
     const scrollbar = document.createElement("div");
@@ -159,7 +165,7 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     // feedback text
     const feedback = document.createElement("p");
     addClasses(styleClasses.feedback, feedback);
-    shadowRoot.appendChild(feedback);
+    menuAndFeedbackContainer.appendChild(feedback);
 
     // Add event listeners for toggling menu show class
     container.addEventListener("click", () => {
