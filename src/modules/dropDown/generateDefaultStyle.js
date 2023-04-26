@@ -101,6 +101,8 @@ const generateDefaultStyle = (styleClasses) => {
       display: grid;
       grid-auto-rows: 1.1rem;
 
+      position: relative;
+
       max-height: 0; 
       overflow: hidden;
       transition: max-height 0.5s ease-in-out;
