@@ -50,12 +50,11 @@ const generateDefaultStyle = (styleClasses) => {
   const parentStyle = `
     :host {
       display: grid;
-      grid-template: 1rem 32px auto 1rem / min-content;
+      grid-template: 1rem 32px auto / min-content;
       grid-template-areas:
         "label"
         "container"
-        "menu"
-        "feedback";
+        "menuAndFeedback";
 
       position: relative;
     }
@@ -106,6 +105,22 @@ const generateDefaultStyle = (styleClasses) => {
     }
   `;
 
+  const menuAndFeedbackContainerStyle = `
+    .${styleClasses.menuAndFeedbackContainer} {
+      grid-area: menuAndFeedback;
+
+      display: grid;
+      grid-template: auto 1.1rem / 1fr;
+      grid-template-areas:
+        "menu"
+        "feedback";
+
+      position: absolute;
+
+      width: 100%;
+    }
+  `;
+
   const menuStyle = `
     .${styleClasses.menu} {
       background-color: lightblue;
@@ -114,20 +129,18 @@ const generateDefaultStyle = (styleClasses) => {
       display: grid;
       grid-auto-rows: 1.1rem;
 
-      position: absolute;
       z-index: 2;
 
       max-height: 0; 
-      width: 100%;
       overflow: hidden;
       transition: max-height 0.5s ease-in-out;
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
     }
 
     .${styleClasses.menu}.show {
       max-height: 150px;
       overflow-y: scroll;
-      -ms-overflow-style: none;  /* IE and Edge */
-      scrollbar-width: none;  /* Firefox */
     }
 
     .${styleClasses.menu}::-webkit-scrollbar {
@@ -163,6 +176,8 @@ const generateDefaultStyle = (styleClasses) => {
     .${styleClasses.feedback} {
       background-color: grey;
       grid-area: feedback;
+
+      z-index: 2;
     }
   `;
 
@@ -173,6 +188,7 @@ const generateDefaultStyle = (styleClasses) => {
     labelStyle +
     selectionStyle +
     arrowStyle +
+    menuAndFeedbackContainerStyle +
     menuStyle +
     scrollbarStyle +
     optgroupStyle +
