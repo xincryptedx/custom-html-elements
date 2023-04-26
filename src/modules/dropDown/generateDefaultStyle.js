@@ -77,8 +77,7 @@ const generateDefaultStyle = (styleClasses) => {
       grid-area: container;
 
       display: grid;
-      grid-template: 1fr / 1fr 30px;
-      grid-template-areas: "selection arrow";
+      position: relative;
 
       height: 32px;
     }
@@ -87,16 +86,17 @@ const generateDefaultStyle = (styleClasses) => {
   const selectionStyle = `
     .${styleClasses.selection} {
       background-color: blue;
-      grid-area: selection;
     }
   `;
 
   const arrowStyle = `
     .${styleClasses.arrow} {
       background-color: transparent;
-      grid-area: arrow;
 
       height: 30px;
+
+      position: absolute;
+      right: 5px;
 
       transition: 0.5s cubic-bezier(0.1,-0.28, 0.23, 1.35);
     }
