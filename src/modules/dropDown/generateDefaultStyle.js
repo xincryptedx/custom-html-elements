@@ -114,7 +114,7 @@ const generateDefaultStyle = (styleClasses) => {
       display: grid;
       grid-auto-rows: 1.1rem;
 
-      position: relative;
+      position: absolute;
       z-index: 2;
 
       max-height: 0; 
