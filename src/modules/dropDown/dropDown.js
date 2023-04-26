@@ -121,6 +121,13 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     );
   };
 
+  const arrowClicked = (menu, arrow) => {
+    if (menu.classList.contains("show")) {
+      menu.classList.toggle("show");
+      arrow.classList.remove("flip");
+    }
+  };
+
   // #endregion
 
   // #region Create the html
