@@ -98,6 +98,9 @@ const generateDefaultStyle = (styleClasses) => {
     .${styleClasses.menu} {
       background-color: lightblue;
 
+      display: grid;
+      grid-auto-rows: 1.1rem;
+
       max-height: 0; 
       overflow: hidden;
       transition: max-height 0.5s ease-in-out;
