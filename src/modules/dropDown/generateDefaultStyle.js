@@ -106,7 +106,6 @@ const generateDefaultStyle = (styleClasses) => {
     .${styleClasses.menu}.show {
       max-height: 500px;
       overflow-y: scroll;
-      transition: max-height 0.5s cubic-bezier(0.1,-0.28, 0.23, 1.35);
     }
   `;
 
