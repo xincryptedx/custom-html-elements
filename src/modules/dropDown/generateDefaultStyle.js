@@ -50,10 +50,11 @@ const generateDefaultStyle = (styleClasses) => {
   const parentStyle = `
     :host {
       display: grid;
-      grid-template: 1rem auto 1rem / 1fr;
+      grid-template: 1rem 32px auto 1rem / 1fr;
       grid-template-areas:
         "label"
         "container"
+        "menu"
         "feedback";
 
       position: relative;
@@ -99,6 +100,7 @@ const generateDefaultStyle = (styleClasses) => {
   const menuStyle = `
     .${styleClasses.menu} {
       background-color: lightblue;
+      grid-area: menu;
 
       display: grid;
       grid-auto-rows: 1.1rem;
