@@ -50,7 +50,7 @@ const generateDefaultStyle = (styleClasses) => {
   const parentStyle = `
     :host {
       display: grid;
-      grid-template: 1rem 32px auto / min-content;
+      grid-template: 1rem 32px 1.1rem / min-content;
       grid-template-areas:
         "label"
         "container"
@@ -176,7 +176,9 @@ const generateDefaultStyle = (styleClasses) => {
     .${styleClasses.feedback} {
       background-color: grey;
       grid-area: feedback;
+    }
 
+    .${styleClasses.menu}.show + .${styleClasses.feedback} {
       z-index: 2;
     }
   `;
