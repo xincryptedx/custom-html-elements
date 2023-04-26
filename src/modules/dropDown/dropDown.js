@@ -108,7 +108,7 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     menu.classList.toggle("show");
     if (menu.classList.contains("show")) arrow.classList.add("flip");
     else arrow.classList.remove("flip");
-
+    console.log("DropDown Clicked.");
     document.addEventListener(
       "mouseup",
       () => {
@@ -125,6 +125,8 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     if (menu.classList.contains("show")) {
       menu.classList.toggle("show");
       arrow.classList.remove("flip");
+    } else {
+      dropDownClicked(menu, arrow);
     }
   };
 
@@ -194,8 +196,12 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     menuAndFeedbackContainer.appendChild(feedback);
 
     // Add event listeners for toggling menu show class
-    container.addEventListener("click", () => {
+    selection.addEventListener("click", () => {
       dropDownClicked(menu, arrow);
+    });
+    arrow.addEventListener("mouseup", (e) => {
+      e.stopPropagation();
+      arrowClicked(menu, arrow);
     });
 
     return element;
