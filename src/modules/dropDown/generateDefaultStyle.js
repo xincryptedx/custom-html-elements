@@ -50,7 +50,7 @@ const generateDefaultStyle = (styleClasses) => {
   const parentStyle = `
     :host {
       display: grid;
-      grid-template: 1rem 32px auto 1rem / 1fr;
+      grid-template: 1rem 32px auto 1rem / min-content;
       grid-template-areas:
         "label"
         "container"
