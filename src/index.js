@@ -42,3 +42,5 @@ const thirdDropDown = DropDown([], false, "autoComplete");
 document.body.appendChild(invalidParamDD.parent);
 
 document.body.appendChild(thirdDropDown.parent);
+
+dropDownMenu.zIndex = 300;
