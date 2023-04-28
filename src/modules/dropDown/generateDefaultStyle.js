@@ -130,7 +130,7 @@ const generateDefaultStyle = (styleClasses, options) => {
 
       z-index: ${options.zIndex};
 
-      overflow: hidden;
+      overflow-y: scroll;
       -ms-overflow-style: none;  /* IE and Edge */
       scrollbar-width: none;  /* Firefox */
 
@@ -139,7 +139,6 @@ const generateDefaultStyle = (styleClasses, options) => {
 
     .${styleClasses.menu}.show {
       max-height: 150px;
-      overflow-y: scroll;
       opacity: 1;
     }
 

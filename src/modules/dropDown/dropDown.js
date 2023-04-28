@@ -129,6 +129,7 @@ const dropDown = (menuData, allowUserSetValues, type) => {
   };
 
   const updateScrollBar = (menu, scrollbar) => {
+    console.log("updateing menu scroll");
     const { scrollTop } = menu;
     const { scrollHeight } = menu;
     const wrapperHeight = menu.offsetHeight;
@@ -208,6 +209,9 @@ const dropDown = (menuData, allowUserSetValues, type) => {
       e.stopPropagation();
       arrowClicked(menu, arrow);
     });
+
+    // Add event listener for menu scrollbar
+    menu.addEventListener("scroll", updateScrollBar(menu, scrollbar));
 
     return element;
   };
