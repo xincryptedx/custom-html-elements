@@ -129,16 +129,21 @@ const dropDown = (menuData, allowUserSetValues, type) => {
   };
 
   const updateScrollBar = (menu, scrollbar) => {
-    console.log("updating menu scroll");
     const { scrollTop } = menu;
     const { scrollHeight } = menu;
     const wrapperHeight = menu.offsetHeight;
-    const scrollbarHeight = (wrapperHeight / scrollHeight) * wrapperHeight;
+    const maxScroll = Math.floor(scrollHeight - wrapperHeight);
+    const scrolledAmount = Math.min(Math.max(scrollTop / maxScroll, 0), 1);
 
-    console.log(scrollbar);
+    const scrollbarHeightRatio = wrapperHeight / scrollHeight;
+    const hiddenAreaHeight = scrollHeight - wrapperHeight;
+    const visibleScrollbarHeight = hiddenAreaHeight * scrollbarHeightRatio;
+    scrollbar.style.height = `${visibleScrollbarHeight}px`;
 
-    scrollbar.style.height = `${scrollbarHeight}px`;
-    scrollbar.style.top = `${(scrollTop / scrollHeight) * wrapperHeight}px`;
+    console.log(
+      `scrHeightRatio: ${scrollbarHeightRatio}, hiddenHeight: ${hiddenAreaHeight}, visibleHeight: ${visibleScrollbarHeight}`
+    );
+    console.log(wrapperHeight);
   };
 
   // #endregion
