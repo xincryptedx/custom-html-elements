@@ -120,6 +120,8 @@ const generateDefaultStyle = (styleClasses, options) => {
       display: grid;
       grid-auto-rows: 1.1rem;
 
+      position: relative;
+
       max-height: 0; 
       background-color: white;
       border: 1px solid black;
@@ -148,7 +150,12 @@ const generateDefaultStyle = (styleClasses, options) => {
 
   const scrollbarStyle = `
     .${styleClasses.scrollbar} {
-
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 10px;
+      background-color: black;
+      border-radius: 5px;
     }
   `;
 
