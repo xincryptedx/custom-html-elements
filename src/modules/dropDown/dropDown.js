@@ -199,7 +199,7 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     // Scroll container
     const scrollContainer = document.createElement("div");
     addClasses(styleClasses.scrollContainer, scrollContainer);
-    menu.appendChild(scrollContainer);
+    menuAndFeedbackContainer.appendChild(scrollContainer);
 
     // Scroll bar
     const scrollbar = document.createElement("div");

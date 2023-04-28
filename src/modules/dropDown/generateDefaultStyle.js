@@ -147,6 +147,24 @@ const generateDefaultStyle = (styleClasses, options) => {
     }
   `;
 
+  const scrollContainerStyle = `
+    .${styleClasses.scrollContainer} {
+      position: absolute;
+      right: 0;
+      height: 0;
+      opacity: 0;
+      transition: height 0.5s ease-in-out, opacity 0.1s ease-in-out;
+    }
+
+    .${styleClasses.menu}.show + .${styleClasses.scrollContainer} {
+      height: 150px;
+      width: 10px;
+      opacity: 1;
+      background-color: pink;
+      z-index: ${options.zIndex};
+    }
+  `;
+
   const scrollbarStyle = `
     .${styleClasses.scrollbar} {
       position: absolute;
@@ -194,6 +212,7 @@ const generateDefaultStyle = (styleClasses, options) => {
     arrowStyle +
     menuAndFeedbackContainerStyle +
     menuStyle +
+    scrollContainerStyle +
     scrollbarStyle +
     optgroupStyle +
     optionStyle +
