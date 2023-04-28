@@ -47,7 +47,6 @@ const dropDown = (menuData, allowUserSetValues, type) => {
 
   const styleClasses = {
     container: "container",
-    /* label: "label", */
     selection: "selection",
     arrow: "arrow",
     menu: "menu",
@@ -139,14 +138,6 @@ const dropDown = (menuData, allowUserSetValues, type) => {
 
     // Attatch shadow root to encapsulate children and style
     const shadowRoot = element.attachShadow({ mode: "open" });
-
-    // Label
-    /* const inputId = "selection";
-    const label = document.createElement("label");
-    addClasses(styleClasses.label, label);
-    label.setAttribute("for", inputId);
-    label.textContent = "Label";
-    shadowRoot.appendChild(label); */
 
     // Container
     const container = document.createElement("div");
