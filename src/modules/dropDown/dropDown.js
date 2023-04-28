@@ -50,6 +50,7 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     selection: "selection",
     arrow: "arrow",
     menu: "menu",
+    scrollContainer: "scrollContainer",
     scrollbar: "scrollbar",
     optgroup: "optgroup",
     option: "option",
@@ -195,10 +196,15 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     addClasses(styleClasses.menu, menu);
     menuAndFeedbackContainer.appendChild(menu);
 
+    // Scroll container
+    const scrollContainer = document.createElement("div");
+    addClasses(styleClasses.scrollContainer, scrollContainer);
+    menu.appendChild(scrollContainer);
+
     // Scroll bar
     const scrollbar = document.createElement("div");
     addClasses(styleClasses.scrollbar, scrollbar);
-    menu.appendChild(scrollbar);
+    scrollContainer.appendChild(scrollbar);
 
     // Menu items, cagetgories, and dividers created from menu data
     createMenu(menu);
