@@ -50,9 +50,8 @@ const generateDefaultStyle = (styleClasses, options) => {
   const parentStyle = `
     :host {
       display: grid;
-      grid-template: 1rem 32px 1.1rem / min-content;
+      grid-template: 32px 1.1rem / min-content;
       grid-template-areas:
-        "label"
         "container"
         "menuAndFeedback";
 
@@ -60,13 +59,6 @@ const generateDefaultStyle = (styleClasses, options) => {
     }
     :host([hidden]) { 
       display: none 
-    }
-  `;
-
-  const labelStyle = `
-    .${styleClasses.label} {
-      background-color: red;
-      grid-area: label;
     }
   `;
 
@@ -187,7 +179,6 @@ const generateDefaultStyle = (styleClasses, options) => {
     resetStyle +
     parentStyle +
     containerStyle +
-    labelStyle +
     selectionStyle +
     arrowStyle +
     menuAndFeedbackContainerStyle +
