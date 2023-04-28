@@ -4,7 +4,6 @@ import generateDefaultStyle from "./generateDefaultStyle";
 
 const dropDown = (menuData, allowUserSetValues, type) => {
   // #region Properties
-  // Public Properties
   const parentClasses = "drop-down";
 
   const placeholderText = "--Select--";
@@ -104,7 +103,7 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     }
   };
 
-  const dropDownClicked = (menu, arrow, scrollContainer) => {
+  const dropDownClicked = (menu, arrow) => {
     // Toggle the menu show class and flip arrow
     menu.classList.toggle("show");
     if (menu.classList.contains("show")) arrow.classList.add("flip");
@@ -120,18 +119,14 @@ const dropDown = (menuData, allowUserSetValues, type) => {
       },
       { once: true }
     );
-    // Hide scrollbar if it is not needed
-    if (menu.scrollHeight <= menu.clientHeight) {
-      scrollContainer.classList.add("hide");
-    }
   };
 
-  const arrowClicked = (menu, arrow, scrollContainer) => {
+  const arrowClicked = (menu, arrow) => {
     if (menu.classList.contains("show")) {
       menu.classList.toggle("show");
       arrow.classList.remove("flip");
     } else {
-      dropDownClicked(menu, arrow, scrollContainer);
+      dropDownClicked(menu, arrow);
     }
   };
 
@@ -228,11 +223,11 @@ const dropDown = (menuData, allowUserSetValues, type) => {
 
     // Add event listeners for toggling menu show class
     selection.addEventListener("click", () => {
-      dropDownClicked(menu, arrow, scrollContainer);
+      dropDownClicked(menu, arrow);
     });
     arrow.addEventListener("mouseup", (e) => {
       e.stopPropagation();
-      arrowClicked(menu, arrow, scrollContainer);
+      arrowClicked(menu, arrow);
     });
 
     // Event listener for updating scrollbar
@@ -250,6 +245,8 @@ const dropDown = (menuData, allowUserSetValues, type) => {
   // Create style element
   const shadowStyles = document.createElement("style");
   parent.shadowRoot.appendChild(shadowStyles);
+
+  // Check  if scrollbar is needed
 
   // Methods for altering after creation
   const setShadowStyle = () => {

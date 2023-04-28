@@ -148,6 +148,10 @@ const generateDefaultStyle = (styleClasses, options) => {
   `;
 
   const scrollContainerStyle = `
+    .${styleClasses.scrollContainer}.hide {
+      display: none;
+    }
+
     .${styleClasses.scrollContainer} {
       position: absolute;
       right: 0;
