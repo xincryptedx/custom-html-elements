@@ -7,7 +7,7 @@ const dropDown = (menuData, allowUserSetValues, type) => {
   // Public Properties
   const parentClasses = "drop-down";
 
-  // const placeholderText = "--Select--";
+  const placeholderText = "--Select--";
 
   // Menu Data
   const defaultData = ["Invalid", "Or", "Missing", "Menu", "Data"];
@@ -149,8 +149,10 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     if (autoSuggest || autoComplete || userSetValues) {
       selection = document.createElement("input");
       selection.setAttribute("type", "text");
+      selection.placeholder = placeholderText;
     } else {
       selection = document.createElement("p");
+      selection.textContent = placeholderText;
     }
     const inputId = "selection";
     selection.setAttribute("id", inputId);
