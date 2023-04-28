@@ -64,7 +64,6 @@ const generateDefaultStyle = (styleClasses, options) => {
 
   const containerStyle = `
     .${styleClasses.container} {
-      background-color: green;
       grid-area: container;
 
       display: grid;
@@ -77,7 +76,7 @@ const generateDefaultStyle = (styleClasses, options) => {
 
   const selectionStyle = `
     .${styleClasses.selection} {
-      background-color: blue;
+
     }
   `;
 
@@ -116,7 +115,6 @@ const generateDefaultStyle = (styleClasses, options) => {
 
   const menuStyle = `
     .${styleClasses.menu} {
-      background-color: lightblue;
       grid-area: menu;
 
       display: grid;
@@ -143,19 +141,19 @@ const generateDefaultStyle = (styleClasses, options) => {
 
   const scrollbarStyle = `
     .${styleClasses.scrollbar} {
-      background-color: lightgreen;
+
     }
   `;
 
   const optgroupStyle = `
     .${styleClasses.optgroup} {
-      background-color: pink;
+
     }
   `;
 
   const optionStyle = `
     .${styleClasses.option} {
-      background-color: purple;
+
     }
   `;
 
@@ -167,7 +165,6 @@ const generateDefaultStyle = (styleClasses, options) => {
 
   const feedbackStyle = `
     .${styleClasses.feedback} {
-      background-color: grey;
       grid-area: feedback;
     }
 
