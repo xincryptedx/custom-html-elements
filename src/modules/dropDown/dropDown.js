@@ -129,22 +129,28 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     }
   };
 
-  const updateScrollBar = (menu, scrollbar) => {
+  const updateScrollBar = (menu, scrollbar, scrollContainer) => {
     const { scrollTop } = menu;
     const { scrollHeight } = menu;
-    const wrapperHeight = menu.offsetHeight;
-    const maxScroll = Math.floor(scrollHeight - wrapperHeight);
-    const scrolledAmount = Math.min(Math.max(scrollTop / maxScroll, 0), 1);
+    const menuHeight = menu.offsetHeight;
+    const maxScroll = Math.floor(scrollHeight - menuHeight);
+    const scrolledPercent = Math.min(Math.max(scrollTop / maxScroll, 0), 1);
+    const scrollContainerHeight = scrollContainer.offsetHeight;
 
-    const scrollbarHeightRatio = wrapperHeight / scrollHeight;
-    const hiddenAreaHeight = scrollHeight - wrapperHeight;
+    const scrollbarHeightRatio = menuHeight / scrollHeight;
+    const hiddenAreaHeight = scrollHeight - menuHeight;
     const visibleScrollbarHeight = hiddenAreaHeight * scrollbarHeightRatio;
+
+    scrollbar.style.top = `${Math.min(
+      Math.max(scrolledPercent * scrollContainerHeight, 0),
+      scrollContainerHeight - visibleScrollbarHeight
+    )}px`;
     scrollbar.style.height = `${visibleScrollbarHeight}px`;
 
     console.log(
       `scrHeightRatio: ${scrollbarHeightRatio}, hiddenHeight: ${hiddenAreaHeight}, visibleHeight: ${visibleScrollbarHeight}`
     );
-    console.log(wrapperHeight);
+    console.log(menuHeight);
   };
 
   // #endregion
@@ -225,7 +231,7 @@ const dropDown = (menuData, allowUserSetValues, type) => {
 
     // Event listener for updating scrollbar
     menu.addEventListener("scroll", () => {
-      updateScrollBar(menu, scrollbar);
+      updateScrollBar(menu, scrollbar, scrollContainer);
     });
 
     return element;
