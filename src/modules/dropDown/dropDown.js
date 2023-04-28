@@ -37,6 +37,7 @@ const dropDown = (menuData, allowUserSetValues, type) => {
   // const required = false;
 
   const styleOptions = {
+    menuItemHeight: 18,
     menuMaxHeight: 150,
     zIndex: 2,
   };
@@ -230,6 +231,13 @@ const dropDown = (menuData, allowUserSetValues, type) => {
       e.stopPropagation();
       arrowClicked(menu, arrow);
     });
+
+    menu.style.height = styleOptions.menuMaxHeight;
+    if (menu.scrollHeight > menu.offsetHeight) {
+      console.log("Doesn't need scrollbar");
+      scrollContainer.classList.add("hide");
+    }
+    menu.removeAttribute("style");
 
     // Event listener for updating scrollbar
     menu.addEventListener("scroll", () => {
