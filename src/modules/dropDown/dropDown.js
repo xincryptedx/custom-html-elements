@@ -129,11 +129,13 @@ const dropDown = (menuData, allowUserSetValues, type) => {
   };
 
   const updateScrollBar = (menu, scrollbar) => {
-    console.log("updateing menu scroll");
+    console.log("updating menu scroll");
     const { scrollTop } = menu;
     const { scrollHeight } = menu;
     const wrapperHeight = menu.offsetHeight;
     const scrollbarHeight = (wrapperHeight / scrollHeight) * wrapperHeight;
+
+    console.log(scrollbar);
 
     scrollbar.style.height = `${scrollbarHeight}px`;
     scrollbar.style.top = `${(scrollTop / scrollHeight) * wrapperHeight}px`;
@@ -210,8 +212,10 @@ const dropDown = (menuData, allowUserSetValues, type) => {
       arrowClicked(menu, arrow);
     });
 
-    // Add event listener for menu scrollbar
-    menu.addEventListener("scroll", updateScrollBar(menu, scrollbar));
+    // Event listener for updating scrollbar
+    menu.addEventListener("scroll", () => {
+      updateScrollBar(menu, scrollbar);
+    });
 
     return element;
   };
