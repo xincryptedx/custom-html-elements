@@ -153,6 +153,7 @@ const generateDefaultStyle = (styleClasses, options) => {
       top: 0;
       right: 0;
       width: 10px;
+      height: 33%;
       background-color: black;
       border-radius: 5px;
     }
