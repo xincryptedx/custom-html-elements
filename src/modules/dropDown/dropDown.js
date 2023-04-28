@@ -47,7 +47,7 @@ const dropDown = (menuData, allowUserSetValues, type) => {
 
   const styleClasses = {
     container: "container",
-    label: "label",
+    /* label: "label", */
     selection: "selection",
     arrow: "arrow",
     menu: "menu",
@@ -108,7 +108,6 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     menu.classList.toggle("show");
     if (menu.classList.contains("show")) arrow.classList.add("flip");
     else arrow.classList.remove("flip");
-    console.log("DropDown Clicked.");
     document.addEventListener(
       "mouseup",
       () => {
@@ -142,12 +141,12 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     const shadowRoot = element.attachShadow({ mode: "open" });
 
     // Label
-    const inputId = "selection";
+    /* const inputId = "selection";
     const label = document.createElement("label");
     addClasses(styleClasses.label, label);
     label.setAttribute("for", inputId);
     label.textContent = "Label";
-    shadowRoot.appendChild(label);
+    shadowRoot.appendChild(label); */
 
     // Container
     const container = document.createElement("div");
@@ -162,6 +161,7 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     } else {
       selection = document.createElement("p");
     }
+    const inputId = "selection";
     selection.setAttribute("id", inputId);
     addClasses(styleClasses.selection, selection);
     container.appendChild(selection);
