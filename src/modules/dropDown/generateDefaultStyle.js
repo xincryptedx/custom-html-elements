@@ -71,12 +71,17 @@ const generateDefaultStyle = (styleClasses, options) => {
       position: relative;
 
       height: 32px;
+      min-width: 20ch;
     }
   `;
 
   const selectionStyle = `
     .${styleClasses.selection} {
       background-color: blue;
+    }
+
+    .${styleClasses.selection}[disabled] {
+      pointer-events: none;
     }
   `;
 
