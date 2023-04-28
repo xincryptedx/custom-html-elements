@@ -151,9 +151,9 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     selection.textContent = placeholderText;
 
     if (autoSuggest || autoComplete || userSetValues) {
-      selection.disabled = false;
+      selection.readOnly = false;
     } else {
-      selection.disabled = true;
+      selection.readOnly = true;
     }
 
     const inputId = "selection";
