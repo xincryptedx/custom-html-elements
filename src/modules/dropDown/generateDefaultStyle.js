@@ -120,18 +120,24 @@ const generateDefaultStyle = (styleClasses, options) => {
       display: grid;
       grid-auto-rows: 1.1rem;
 
+      max-height: 0; 
+      background-color: white;
+
       z-index: ${options.zIndex};
 
-      max-height: 0; 
+
       overflow: hidden;
-      transition: max-height 0.5s ease-in-out;
       -ms-overflow-style: none;  /* IE and Edge */
       scrollbar-width: none;  /* Firefox */
+
+      transition: max-height 0.5s ease-in-out;
     }
 
     .${styleClasses.menu}.show {
       max-height: 150px;
       overflow-y: scroll;
+
+      border: 1px solid black;
     }
 
     .${styleClasses.menu}::-webkit-scrollbar {
