@@ -171,6 +171,7 @@ const generateDefaultStyle = (styleClasses, options) => {
   const scrollbarStyle = `
     .${styleClasses.scrollbar} {
       position: absolute;
+      top: 2px;
       right: 2px;
       width: 8px;
       height: 33%;

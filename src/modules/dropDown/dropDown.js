@@ -145,7 +145,7 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     const visibleScrollbarHeight = hiddenAreaHeight * scrollbarHeightRatio;
 
     scrollbar.style.top = `${Math.min(
-      Math.max(scrolledPercent * scrollContainerHeight, 0),
+      Math.max(scrolledPercent * scrollContainerHeight, 2),
       scrollContainerHeight - visibleScrollbarHeight
     )}px`;
     scrollbar.style.height = `${visibleScrollbarHeight}px`;
