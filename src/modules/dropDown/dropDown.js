@@ -104,10 +104,12 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     }
   };
 
-  const dropDownClicked = (menu, arrow) => {
+  const dropDownClicked = (menu, arrow, scrollContainer) => {
+    // Toggle the menu show class and flip arrow
     menu.classList.toggle("show");
     if (menu.classList.contains("show")) arrow.classList.add("flip");
     else arrow.classList.remove("flip");
+    // Add one time event listener to close dropdown on outside click
     document.addEventListener(
       "mouseup",
       () => {
@@ -118,14 +120,18 @@ const dropDown = (menuData, allowUserSetValues, type) => {
       },
       { once: true }
     );
+    // Hide scrollbar if it is not needed
+    if (menu.scrollHeight <= menu.clientHeight) {
+      scrollContainer.classList.add("hide");
+    }
   };
 
-  const arrowClicked = (menu, arrow) => {
+  const arrowClicked = (menu, arrow, scrollContainer) => {
     if (menu.classList.contains("show")) {
       menu.classList.toggle("show");
       arrow.classList.remove("flip");
     } else {
-      dropDownClicked(menu, arrow);
+      dropDownClicked(menu, arrow, scrollContainer);
     }
   };
 
@@ -222,11 +228,11 @@ const dropDown = (menuData, allowUserSetValues, type) => {
 
     // Add event listeners for toggling menu show class
     selection.addEventListener("click", () => {
-      dropDownClicked(menu, arrow);
+      dropDownClicked(menu, arrow, scrollContainer);
     });
     arrow.addEventListener("mouseup", (e) => {
       e.stopPropagation();
-      arrowClicked(menu, arrow);
+      arrowClicked(menu, arrow, scrollContainer);
     });
 
     // Event listener for updating scrollbar
