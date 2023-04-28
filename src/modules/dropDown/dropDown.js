@@ -37,7 +37,7 @@ const dropDown = (menuData, allowUserSetValues, type) => {
   // const required = false;
 
   const styleOptions = {
-    menuHeight: 150,
+    menuMaxHeight: 150,
     zIndex: 2,
   };
   /* detatched bool
