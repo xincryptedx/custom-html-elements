@@ -164,7 +164,6 @@ const generateDefaultStyle = (styleClasses, options) => {
       height: 150px;
       width: 10px;
       opacity: 1;
-      background-color: pink;
       z-index: ${options.zIndex};
     }
   `;
@@ -172,8 +171,8 @@ const generateDefaultStyle = (styleClasses, options) => {
   const scrollbarStyle = `
     .${styleClasses.scrollbar} {
       position: absolute;
-      right: 0;
-      width: 10px;
+      right: 2px;
+      width: 8px;
       height: 33%;
       background-color: black;
       border-radius: 5px;
