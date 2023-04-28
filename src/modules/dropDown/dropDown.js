@@ -232,12 +232,12 @@ const dropDown = (menuData, allowUserSetValues, type) => {
       arrowClicked(menu, arrow);
     });
 
-    menu.style.height = styleOptions.menuMaxHeight;
-    if (menu.scrollHeight > menu.offsetHeight) {
-      console.log("Doesn't need scrollbar");
+    if (
+      menu.children.length * styleOptions.menuItemHeight <=
+      styleOptions.menuMaxHeight
+    ) {
       scrollContainer.classList.add("hide");
     }
-    menu.removeAttribute("style");
 
     // Event listener for updating scrollbar
     menu.addEventListener("scroll", () => {
