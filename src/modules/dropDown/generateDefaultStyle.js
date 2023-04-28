@@ -79,10 +79,6 @@ const generateDefaultStyle = (styleClasses, options) => {
     .${styleClasses.selection} {
       background-color: blue;
     }
-
-    .${styleClasses.selection}[disabled] {
-      pointer-events: none;
-    }
   `;
 
   const arrowStyle = `
