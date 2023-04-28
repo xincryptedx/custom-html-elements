@@ -122,22 +122,23 @@ const generateDefaultStyle = (styleClasses, options) => {
 
       max-height: 0; 
       background-color: white;
+      border: 1px solid black;
+
+      opacity: 0;
 
       z-index: ${options.zIndex};
-
 
       overflow: hidden;
       -ms-overflow-style: none;  /* IE and Edge */
       scrollbar-width: none;  /* Firefox */
 
-      transition: max-height 0.5s ease-in-out;
+      transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
     }
 
     .${styleClasses.menu}.show {
       max-height: 150px;
       overflow-y: scroll;
-
-      border: 1px solid black;
+      opacity: 1;
     }
 
     .${styleClasses.menu}::-webkit-scrollbar {
