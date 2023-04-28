@@ -145,15 +145,17 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     shadowRoot.appendChild(container);
 
     // Either a p if standard or text input if autoSuggest, autoComplete, or userSetValues are true
-    let selection;
+    const selection = document.createElement("input");
+    selection.setAttribute("type", "text");
+    selection.placeholder = placeholderText;
+    selection.textContent = placeholderText;
+
     if (autoSuggest || autoComplete || userSetValues) {
-      selection = document.createElement("input");
-      selection.setAttribute("type", "text");
-      selection.placeholder = placeholderText;
+      selection.disabled = false;
     } else {
-      selection = document.createElement("p");
-      selection.textContent = placeholderText;
+      selection.disabled = true;
     }
+
     const inputId = "selection";
     selection.setAttribute("id", inputId);
     addClasses(styleClasses.selection, selection);
