@@ -128,6 +128,16 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     }
   };
 
+  const updateScrollBar = (menu, scrollbar) => {
+    const { scrollTop } = menu;
+    const { scrollHeight } = menu;
+    const wrapperHeight = menu.offsetHeight;
+    const scrollbarHeight = (wrapperHeight / scrollHeight) * wrapperHeight;
+
+    scrollbar.style.height = `${scrollbarHeight}px`;
+    scrollbar.style.top = `${(scrollTop / scrollHeight) * wrapperHeight}px`;
+  };
+
   // #endregion
 
   // #region Create the html
