@@ -11,11 +11,13 @@
 }
 
 .reel {
+  display: grid;
+  grid-auto-flow: column;
 }
 
 .slide {
   height: 200px;
-  width: 185px;
+  width: 180px;
 }
 
 .previous-btn {
