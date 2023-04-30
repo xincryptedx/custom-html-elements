@@ -1,4 +1,4 @@
-const imageSlider = () => {
+const imageSlider = (imageSources) => {
   const slideCount = 0;
   const currentSlide = 0;
 
@@ -23,6 +23,37 @@ const imageSlider = () => {
             -navCirclesContainer
                 -*navCircles*(createNavCircles)
   */
+  const createElements = () => {
+    // Parent
+    const parent = document.createElement("div");
+    parent.classList.add("parent");
+
+    // Reel
+    // Container
+    const reelContainer = document.createElement("div");
+    reelContainer.classList.add("reel-container");
+    parent.appendChild(reelContainer);
+
+    // Buttons
+    // Previous
+    const previousBtn = document.createElement("div");
+    previousBtn.classList.add("previous-btn");
+    parent.appendChild(previousBtn);
+
+    // Next
+    const nextBtn = document.createElement("div");
+    nextBtn.classList.add("next-btn");
+    parent.appendChild(nextBtn);
+
+    // Nav Circles
+    // Container
+    const navCirclesContainer = document.createElement("div");
+    navCirclesContainer.classList.add("nav-circles-container");
+    parent.appendChild(navCirclesContainer);
+
+    return parent;
+  };
+
   // #endregion
   const setReel = (slideIndex) => {
     // set reel position based on slideCount and currentSlide
@@ -39,6 +70,10 @@ const imageSlider = () => {
   const autoAdvance = () => {
     // Set timer, call setReel(currentSlide + 1), reset timer
   };
+
+  const parent = createElements();
+
+  return { parent };
 };
 
 export default imageSlider;
