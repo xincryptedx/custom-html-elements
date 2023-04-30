@@ -48,4 +48,4 @@ dropDownMenu.zIndex = 300;
 
 const slider = ImageSlider([]);
 
-document.body.appendChild(slider);
+document.body.appendChild(slider.parent);

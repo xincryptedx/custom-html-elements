@@ -57,7 +57,7 @@ const imageSlider = (imageSources) => {
     // Reel div
     const reel = document.createElement("div");
     reel.classList.add("reel");
-    reelContainer.appendChild("reel");
+    reelContainer.appendChild(reel);
     // Create slides
 
     // Buttons
