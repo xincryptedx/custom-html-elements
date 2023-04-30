@@ -8,6 +8,8 @@
 
 .reel-container {
   grid-area: img;
+
+  position: relative;
 }
 
 .reel {
