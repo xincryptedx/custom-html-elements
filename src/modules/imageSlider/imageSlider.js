@@ -5,6 +5,7 @@ import "./style.css";
 const imageSlider = (imageSources) => {
   let slideCount = 0;
   const currentSlide = 0;
+  const slideWidth = 180;
   const slideSpacerWidth = 100;
 
   // Check imageSources is array
@@ -46,14 +47,11 @@ const imageSlider = (imageSources) => {
       slide.src = validatedSources[i];
       slide.classList.add("slide");
 
-      const right = document.createElement("div");
-      right.classList.add("spacer");
-      const left = document.createElement("div");
-      left.classList.add("spacer");
+      const spacer = document.createElement("div");
+      spacer.classList.add("spacer");
 
-      reel.appendChild(right);
+      reel.appendChild(spacer);
       reel.appendChild(slide);
-      reel.appendChild(left);
 
       slideCount += 1;
     }
@@ -120,6 +118,8 @@ const imageSlider = (imageSources) => {
   // #endregion
   const setReel = (slideIndex) => {
     // set reel position based on slideCount and currentSlide
+    // 0 should be -1/2 of spacer width
+    // 1 should be
   };
 
   const incrementReel = (next = true) => {
