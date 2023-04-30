@@ -144,16 +144,13 @@ const dropDown = (menuData, allowUserSetValues, type) => {
     const hiddenAreaHeight = scrollHeight - menuHeight;
     const visibleScrollbarHeight = hiddenAreaHeight * scrollbarHeightRatio;
 
-    scrollbar.style.top = `${Math.min(
+    const scrollElement = scrollbar;
+
+    scrollElement.style.top = `${Math.min(
       Math.max(scrolledPercent * scrollContainerHeight, 2),
       scrollContainerHeight - visibleScrollbarHeight
     )}px`;
-    scrollbar.style.height = `${visibleScrollbarHeight}px`;
-
-    console.log(
-      `scrHeightRatio: ${scrollbarHeightRatio}, hiddenHeight: ${hiddenAreaHeight}, visibleHeight: ${visibleScrollbarHeight}`
-    );
-    console.log(menuHeight);
+    scrollElement.style.height = `${visibleScrollbarHeight}px`;
   };
 
   // #endregion
