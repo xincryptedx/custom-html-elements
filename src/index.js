@@ -55,6 +55,7 @@ const slider = ImageSlider([
   "KLJDFKLJ3234kl@!#$@",
   null,
   2343,
+  {},
 ]);
 
 document.body.appendChild(slider.parent);

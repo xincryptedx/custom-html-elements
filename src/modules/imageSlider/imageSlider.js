@@ -16,7 +16,6 @@ const imageSlider = (imageSources) => {
       i = -1;
     }
   }
-  console.log(validatedSources);
 
   // #region Method for creating and returning html parent element
   /*
@@ -39,9 +38,12 @@ const imageSlider = (imageSources) => {
             -navCirclesContainer
                 -*navCircles*(createNavCircles)
   */
-  const createSlides = () => {
+  const createSlides = (reel) => {
     for (let i = 0; i < validatedSources.length; i += 1) {
-      // create the slides
+      const slide = document.createElement("img");
+      slide.src = validatedSources[i];
+      slide.classList.add("slide");
+      reel.appendChild(slide);
     }
   };
 
@@ -59,7 +61,8 @@ const imageSlider = (imageSources) => {
     const reel = document.createElement("div");
     reel.classList.add("reel");
     reelContainer.appendChild(reel);
-    // Create slides
+    // Slides
+    createSlides(reel);
 
     // Buttons
     // Previous
