@@ -25,6 +25,7 @@
   grid-auto-flow: column;
 
   position: absolute;
+  z-index: -1;
 }
 
 .slide {
