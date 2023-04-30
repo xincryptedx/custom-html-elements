@@ -42,11 +42,21 @@ const imageSlider = (imageSources) => {
     const previousBtn = document.createElement("div");
     previousBtn.classList.add("previous-btn");
     parent.appendChild(previousBtn);
+    // Icon
+    const previousIcon = document.createElement("img");
+    previousIcon.src = previousArrow;
+    previousIcon.classList.add("previous-icon");
+    previousBtn.appendChild(previousIcon);
 
     // Next
     const nextBtn = document.createElement("div");
     nextBtn.classList.add("next-btn");
     parent.appendChild(nextBtn);
+    // Icon
+    const nextIcon = document.createElement("img");
+    nextIcon.src = nextArrow;
+    nextIcon.classList.add("next-icon");
+    nextBtn.appendChild(nextIcon);
 
     // Nav Circles
     // Container
