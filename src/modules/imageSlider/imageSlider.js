@@ -1,5 +1,6 @@
 import previousArrow from "./icons/arrowBack.svg";
 import nextArrow from "./icons/arrowForward.svg";
+import "./style.css";
 
 const imageSlider = (imageSources) => {
   let slideCount = 0;
