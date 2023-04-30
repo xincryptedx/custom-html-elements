@@ -20,6 +20,10 @@
   width: 180px;
 }
 
+.spacer {
+  width: 100px;
+}
+
 .previous-btn {
   grid-area: previous;
 }
