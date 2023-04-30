@@ -2,7 +2,7 @@ import previousArrow from "./icons/arrowBack.svg";
 import nextArrow from "./icons/arrowForward.svg";
 
 const imageSlider = (imageSources) => {
-  const slideCount = 0;
+  let slideCount = 0;
   const currentSlide = 0;
 
   // Check imageSources is array
@@ -44,6 +44,8 @@ const imageSlider = (imageSources) => {
       slide.src = validatedSources[i];
       slide.classList.add("slide");
       reel.appendChild(slide);
+
+      slideCount += 1;
     }
   };
 
