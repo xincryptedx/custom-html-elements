@@ -54,7 +54,7 @@ const imageSlider = (imageSources) => {
     for (let i = 0; i < slideCount; i += 1) {
       const navCircle = document.createElement("div");
       navCircle.setAttribute("data-index", `${i}`);
-      navCircle.classList.add("navCircle");
+      navCircle.classList.add("nav-circle");
       container.appendChild(navCircle);
     }
   };
