@@ -112,13 +112,15 @@ const imageSlider = (imageSources) => {
     // Circles
     createNavCircles(navCirclesContainer);
 
-    return { parent, reel };
+    return { parent, reel, nextBtn, previousBtn };
   };
 
   // Create the elements
   const elements = createElements();
   const { parent } = elements;
   const { reel } = elements;
+  const { nextBtn } = elements;
+  const { previousBtn } = elements;
 
   // #endregion
   const setReel = (slideIndex) => {
