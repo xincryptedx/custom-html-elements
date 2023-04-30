@@ -137,7 +137,7 @@ const imageSlider = (imageSources) => {
   const elements = createElements();
   const { parent } = elements;
   const { reel } = elements;
-  reel.style.left = "-50px";
+  reel.style.left = "-50px"; // Replace with method later
 
   return { parent };
 };
