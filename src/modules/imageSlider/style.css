@@ -1,7 +1,13 @@
 .parent {
+  display: grid;
+  grid-template: 200px 50px / 50px 300px 50px;
+  grid-template-areas:
+    "previous img next"
+    ". nav .";
 }
 
 .reel-container {
+  grid-area: img;
 }
 
 .reel {
@@ -11,9 +17,11 @@
 }
 
 .previous-btn {
+  grid-area: previous;
 }
 
 .next-btn {
+  grid-area: next;
 }
 
 .previous-btn,
@@ -25,6 +33,7 @@
 }
 
 .nav-circles-container {
+  grid-area: nav;
 }
 
 .nav-circle {
