@@ -1,9 +1,12 @@
 const imageSlider = () => {
+  const slideCount = 0;
+  const currentSlide = 0;
+
   // #region Method for creating and returning html parent element
   /*
-    Helper functions
+    Helper methods
         -createImageSlides(sources, reel) = Go through sources and if valid format 
-         add an image element, set its src, classes, and append to the reel.
+         add an image element, set its src, classes, and append to the reel. slideCount++
 
         -createNavCircles(container) = For each img element, add a nav circle, set its data-index, 
          classes, append to container, and set its click event to JumpTo. 
@@ -21,10 +24,17 @@ const imageSlider = () => {
                 -*navCircles*(createNavCircles)
   */
   // #endregion
-  // #region Next and Previous functions for changing picture div position
-  // #endregion
-  // #region JumpTo function for nav circles
-  // #endregion
+  const setReel = (slideIndex) => {
+    // set reel position based on slideCount and currentSlide
+  };
+
+  const incrementReel = (next = true) => {
+    // Increment the currentSlide and then call setReel(currentSlide+/- based on next)
+  };
+
+  const jumpToSlide = (slideIndex) => {
+    // call setReel(slideIndex)
+  };
   // #region Auto advance slide every x seconds
   // #endregion
 };
