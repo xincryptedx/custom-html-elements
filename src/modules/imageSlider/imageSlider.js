@@ -136,7 +136,7 @@ const imageSlider = (imageSources) => {
       slideIndex > 0 &&
       slideIndex <= slideCount - 1
     ) {
-      reelPosition = `${
+      reelPosition = `-${
         slideSpacerWidth / 2 + slideIndex * (slideWidth + slideSpacerWidth)
       }px`;
     }
