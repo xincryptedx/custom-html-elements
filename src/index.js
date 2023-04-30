@@ -47,3 +47,5 @@ document.body.appendChild(thirdDropDown.parent);
 dropDownMenu.zIndex = 300;
 
 const slider = ImageSlider([]);
+
+document.body.appendChild(slider);
