@@ -113,7 +113,7 @@ const imageSlider = (imageSources) => {
     // Circles
     createNavCircles(navCirclesContainer);
 
-    return parent;
+    return { parent, reel };
   };
 
   // #endregion
@@ -133,7 +133,11 @@ const imageSlider = (imageSources) => {
     // Set timer, call setReel(currentSlide + 1), reset timer
   };
 
-  const parent = createElements();
+  // Initialize the image slider
+  const elements = createElements();
+  const { parent } = elements;
+  const { reel } = elements;
+  reel.style.left = "-50px";
 
   return { parent };
 };
