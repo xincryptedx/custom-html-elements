@@ -14,6 +14,8 @@
 }
 
 .slide {
+  height: 200px;
+  width: 185px;
 }
 
 .previous-btn {
