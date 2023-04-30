@@ -18,6 +18,8 @@
   grid-area: img;
 
   position: relative;
+
+  overflow: hidden;
 }
 
 .reel {
@@ -26,6 +28,8 @@
 
   position: absolute;
   z-index: -1;
+
+  transition: left 0.5s ease-in-out;
 }
 
 .slide {
