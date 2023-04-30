@@ -116,10 +116,15 @@ const imageSlider = (imageSources) => {
   };
 
   // #endregion
-  const setReel = (slideIndex) => {
-    // set reel position based on slideCount and currentSlide
-    // 0 should be -1/2 of spacer width
-    // 1 should be
+  const setReel = (slideIndex, reel) => {
+    const positionZero = `-${slideSpacerWidth / 2}px`;
+    const reelToSet = reel;
+
+    let reelPosition;
+
+    if (slideIndex === 0) reelPosition = positionZero;
+
+    reelToSet.style.left = reelPosition;
   };
 
   const incrementReel = (next = true) => {
@@ -138,7 +143,7 @@ const imageSlider = (imageSources) => {
   const elements = createElements();
   const { parent } = elements;
   const { reel } = elements;
-  reel.style.left = `-${slideSpacerWidth / 2}px`; // Replace with method later
+  setReel(0, reel);
 
   return { parent };
 };
