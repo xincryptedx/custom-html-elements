@@ -124,6 +124,16 @@ const imageSlider = (imageSources) => {
 
     if (slideIndex === 0) reelPosition = positionZero;
 
+    if (
+      Number.isInteger(slideIndex) &&
+      slideIndex > 0 &&
+      slideIndex <= slideCount - 1
+    ) {
+      reelPosition = `${
+        slideSpacerWidth / 2 + slideIndex * (slideWidth + slideSpacerWidth)
+      }px`;
+    }
+
     reelToSet.style.left = reelPosition;
   };
 
