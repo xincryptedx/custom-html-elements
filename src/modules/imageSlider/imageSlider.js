@@ -44,7 +44,15 @@ const imageSlider = (imageSources) => {
       const slide = document.createElement("img");
       slide.src = validatedSources[i];
       slide.classList.add("slide");
+
+      const right = document.createElement("div");
+      right.classList.add("spacer");
+      const left = document.createElement("div");
+      left.classList.add("spacer");
+
+      reel.appendChild(right);
       reel.appendChild(slide);
+      reel.appendChild(left);
 
       slideCount += 1;
     }
