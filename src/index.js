@@ -46,6 +46,15 @@ document.body.appendChild(thirdDropDown.parent);
 
 dropDownMenu.zIndex = 300;
 
-const slider = ImageSlider([]);
+const slider = ImageSlider([
+  234234,
+  null,
+  undefined,
+  false,
+  "asdfa",
+  "KLJDFKLJ3234kl@!#$@",
+  null,
+  2343,
+]);
 
 document.body.appendChild(slider.parent);

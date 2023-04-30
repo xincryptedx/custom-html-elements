@@ -12,7 +12,8 @@ const imageSlider = (imageSources) => {
   // Trim invalid entries
   for (let i = 0; i < validatedSources.length; i += 1) {
     if (typeof validatedSources[i] !== "string") {
-      validatedSources[i].pop();
+      validatedSources.splice(i, 1);
+      i = -1;
     }
   }
   console.log(validatedSources);
