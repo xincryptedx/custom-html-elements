@@ -1,5 +1,6 @@
 import "./styles/style.css";
 import DropDown from "./modules/dropDown/dropDown";
+import ImageSlider from "./modules/imageSlider/imageSlider";
 
 const dropDownMenu = DropDown(
   [
@@ -44,3 +45,5 @@ document.body.appendChild(invalidParamDD.parent);
 document.body.appendChild(thirdDropDown.parent);
 
 dropDownMenu.zIndex = 300;
+
+const slider = ImageSlider([]);
