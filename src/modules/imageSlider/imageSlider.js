@@ -158,6 +158,13 @@ const imageSlider = (imageSources) => {
     setReel(currentSlide);
   };
 
+  nextBtn.addEventListener("click", () => {
+    incrementReel(true);
+  });
+  previousBtn.addEventListener("click", () => {
+    incrementReel(false);
+  });
+
   const jumpToSlide = (slideIndex) => {
     // call setReel(slideIndex)
   };
