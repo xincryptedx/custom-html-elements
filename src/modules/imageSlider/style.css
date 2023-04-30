@@ -1,6 +1,14 @@
+:root {
+  --image-width: 180px;
+  --image-height: 200px;
+  --spacer-width: 100px;
+
+  --frame-width: calc(var(--image-width) + var(--spacer-width));
+}
+
 .parent {
   display: grid;
-  grid-template: 200px 50px / 50px 300px 50px;
+  grid-template: var(--image-height) 50px / 50px var(--frame-width) 50px;
   grid-template-areas:
     "previous img next"
     ". nav .";
@@ -20,12 +28,12 @@
 }
 
 .slide {
-  height: 200px;
-  width: 180px;
+  height: var(--image-height);
+  width: var(--image-width);
 }
 
 .spacer {
-  width: 100px;
+  width: var(--spacer-width);
 }
 
 .previous-btn {

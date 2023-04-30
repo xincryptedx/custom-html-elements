@@ -5,6 +5,7 @@ import "./style.css";
 const imageSlider = (imageSources) => {
   let slideCount = 0;
   const currentSlide = 0;
+  const slideSpacerWidth = 100;
 
   // Check imageSources is array
   let validatedSources;
@@ -137,7 +138,7 @@ const imageSlider = (imageSources) => {
   const elements = createElements();
   const { parent } = elements;
   const { reel } = elements;
-  reel.style.left = "-50px"; // Replace with method later
+  reel.style.left = `-${slideSpacerWidth / 2}px`; // Replace with method later
 
   return { parent };
 };
