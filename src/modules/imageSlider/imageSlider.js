@@ -35,8 +35,10 @@ const imageSlider = () => {
   const jumpToSlide = (slideIndex) => {
     // call setReel(slideIndex)
   };
-  // #region Auto advance slide every x seconds
-  // #endregion
+
+  const autoAdvance = () => {
+    // Set timer, call setReel(currentSlide + 1), reset timer
+  };
 };
 
 export default imageSlider;
