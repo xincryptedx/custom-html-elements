@@ -4,7 +4,7 @@ import "./style.css";
 
 const imageSlider = (imageSources) => {
   let slideCount = 0;
-  const currentSlide = 0;
+  let currentSlide = 0;
   const slideWidth = 180;
   const slideSpacerWidth = 100;
 
@@ -115,8 +115,13 @@ const imageSlider = (imageSources) => {
     return { parent, reel };
   };
 
+  // Create the elements
+  const elements = createElements();
+  const { parent } = elements;
+  const { reel } = elements;
+
   // #endregion
-  const setReel = (slideIndex, reel) => {
+  const setReel = (slideIndex) => {
     const positionZero = `-${slideSpacerWidth / 2}px`;
     const reelToSet = reel;
 
@@ -138,7 +143,17 @@ const imageSlider = (imageSources) => {
   };
 
   const incrementReel = (next = true) => {
-    // Increment the currentSlide and then call setReel(currentSlide+/- based on next)
+    let incrementer;
+    if (next) incrementer = 1;
+    else incrementer = -1;
+
+    // Set current slide but clamp it to 0 through slideCount - 1
+    currentSlide = Math.min(
+      Math.max(currentSlide + incrementer, 0),
+      slideCount - 1
+    );
+
+    setReel(currentSlide);
   };
 
   const jumpToSlide = (slideIndex) => {
@@ -149,10 +164,7 @@ const imageSlider = (imageSources) => {
     // Set timer, call setReel(currentSlide + 1), reset timer
   };
 
-  // Initialize the image slider
-  const elements = createElements();
-  const { parent } = elements;
-  const { reel } = elements;
+  // Init
   setReel(0, reel);
 
   return { parent };
