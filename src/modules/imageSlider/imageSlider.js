@@ -5,6 +5,18 @@ const imageSlider = (imageSources) => {
   const slideCount = 0;
   const currentSlide = 0;
 
+  // Check imageSources is array
+  let validatedSources;
+  if (!Array.isArray(imageSources)) validatedSources = [];
+  else validatedSources = imageSources;
+  // Trim invalid entries
+  for (let i = 0; i < validatedSources.length; i += 1) {
+    if (typeof validatedSources[i] !== "string") {
+      validatedSources[i].pop();
+    }
+  }
+  console.log(validatedSources);
+
   // #region Method for creating and returning html parent element
   /*
     Helper methods
@@ -26,6 +38,12 @@ const imageSlider = (imageSources) => {
             -navCirclesContainer
                 -*navCircles*(createNavCircles)
   */
+  const createSlides = () => {
+    for (let i = 0; i < validatedSources.length; i += 1) {
+      // create the slides
+    }
+  };
+
   const createElements = () => {
     // Parent
     const parent = document.createElement("div");
@@ -68,6 +86,7 @@ const imageSlider = (imageSources) => {
     const navCirclesContainer = document.createElement("div");
     navCirclesContainer.classList.add("nav-circles-container");
     parent.appendChild(navCirclesContainer);
+    // Create nav circles
 
     return parent;
   };
