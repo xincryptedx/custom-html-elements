@@ -49,6 +49,15 @@ const imageSlider = (imageSources) => {
     }
   };
 
+  const createNavCircles = (container) => {
+    for (let i = 0; i < slideCount; i += 1) {
+      const navCircle = document.createElement("div");
+      navCircle.setAttribute("data-index", `${i}`);
+      navCircle.classList.add("navCircle");
+      container.appendChild(navCircle);
+    }
+  };
+
   const createElements = () => {
     // Parent
     const parent = document.createElement("div");
@@ -92,7 +101,8 @@ const imageSlider = (imageSources) => {
     const navCirclesContainer = document.createElement("div");
     navCirclesContainer.classList.add("nav-circles-container");
     parent.appendChild(navCirclesContainer);
-    // Create nav circles
+    // Circles
+    createNavCircles(navCirclesContainer);
 
     return parent;
   };
