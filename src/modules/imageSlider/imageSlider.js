@@ -23,10 +23,11 @@ const imageSlider = (imageSources) => {
   // #region Method for creating and returning html parent element
   const createSlides = (reel) => {
     for (let i = 0; i < validatedSources.length; i += 1) {
+      // Slide
       const slide = document.createElement("img");
       slide.src = validatedSources[i];
       slide.classList.add("slide");
-
+      // Spacer
       const spacer = document.createElement("div");
       spacer.classList.add("spacer");
 
@@ -39,9 +40,15 @@ const imageSlider = (imageSources) => {
 
   const createNavCircles = (container) => {
     for (let i = 0; i < slideCount; i += 1) {
+      // Circle
       const navCircle = document.createElement("div");
       navCircle.setAttribute("data-index", `${i}`);
       navCircle.classList.add("nav-circle");
+      // Fill
+      const fill = document.createElement("div");
+      fill.classList.add("fill");
+
+      navCircle.appendChild(fill);
       container.appendChild(navCircle);
     }
   };
