@@ -44,6 +44,7 @@
 
 .spacer {
   width: var(--spacer-width);
+  background-color: rgb(100, 100, 100);
 }
 
 .previous-btn {
