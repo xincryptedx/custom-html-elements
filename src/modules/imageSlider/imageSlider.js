@@ -21,26 +21,6 @@ const imageSlider = (imageSources) => {
   }
 
   // #region Method for creating and returning html parent element
-  /*
-    Helper methods
-        -createImageSlides(sources, reel) = Go through sources and if valid format 
-         add an image element, set its src, classes, and append to the reel. slideCount++
-
-        -createNavCircles(container) = For each img element, add a nav circle, set its data-index, 
-         classes, append to container, and set its click event to JumpTo. 
-
-    Static HTML
-        -main container
-            -imagesContainer
-                -imagesReel
-                    -*slides*(createImageSlides)
-            -previousBtnContainer
-                -img of arrow
-            -nextBtnContainer
-                -img of arrow
-            -navCirclesContainer
-                -*navCircles*(createNavCircles)
-  */
   const createSlides = (reel) => {
     for (let i = 0; i < validatedSources.length; i += 1) {
       const slide = document.createElement("img");
