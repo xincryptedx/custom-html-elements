@@ -5,7 +5,7 @@
 
   --img-window-width: calc(var(--image-width) + var(--spacer-width));
 
-  --nav-circle-size: 20px;
+  --nav-circle-size: 17px;
 }
 
 .image-slider {
@@ -78,16 +78,16 @@
   height: var(--nav-circle-size);
   width: var(--nav-circle-size);
 
-  border-radius: calc(var(--nav-circle-size) / 2);
-  background-color: transparent;
-  border: 1px solid black;
+  border-radius: var(--nav-circle-size);
+  background-color: lightgrey;
+  border: 2px solid black;
 }
 
 .nav-circle .fill {
-  background-color: red;
+  background-color: rgb(47, 167, 0);
   height: 0;
   aspect-ratio: 1 / 1;
-  border-radius: calc(var(--nav-circle-size) / 2);
+  border-radius: var(--nav-circle-size);
 
   transition: height 0.5s ease-in-out;
 }
