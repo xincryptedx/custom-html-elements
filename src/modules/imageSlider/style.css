@@ -61,6 +61,9 @@
 
 .nav-circles-container {
   grid-area: nav;
+
+  display: grid;
+  grid-auto-flow: column;
 }
 
 .nav-circle {
