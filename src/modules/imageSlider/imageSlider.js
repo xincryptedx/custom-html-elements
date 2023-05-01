@@ -165,6 +165,13 @@ const imageSlider = (imageSources) => {
     resetAutoAdvanceInterval();
   });
 
+  const setSelectedNavCircle = () => {
+    for (let i = 0; i < navCircles.length; i += 1) {
+      if (i === currentSlide) navCircles[i].classList.add("selected");
+      else navCircles[i].classList.remove("selected");
+    }
+  };
+
   const jumpToSlide = (slideIndex) => {
     // call setReel(slideIndex)
   };
