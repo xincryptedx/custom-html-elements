@@ -136,7 +136,6 @@ const imageSlider = (imageSources) => {
   };
 
   const incrementReel = (next = true) => {
-    console.log("Inc");
     let incrementer;
     if (next) incrementer = 1;
     else incrementer = -1;
@@ -156,21 +155,25 @@ const imageSlider = (imageSources) => {
     autoAdvanceInterval = setInterval(incrementReel, 5000);
   };
 
+  const setSelectedNavCircle = () => {
+    Object.keys(navCircles).forEach((key) => {
+      console.log(`Key: ${key}, Current Slide: ${currentSlide}`);
+      if (key === currentSlide.toString()) {
+        navCircles[key].classList.add("selected");
+      } else navCircles[key].classList.remove("selected");
+    });
+  };
+
   nextBtn.addEventListener("click", () => {
     incrementReel(true);
+    setSelectedNavCircle();
     resetAutoAdvanceInterval();
   });
   previousBtn.addEventListener("click", () => {
     incrementReel(false);
+    setSelectedNavCircle();
     resetAutoAdvanceInterval();
   });
-
-  const setSelectedNavCircle = () => {
-    for (let i = 0; i < navCircles.length; i += 1) {
-      if (i === currentSlide) navCircles[i].classList.add("selected");
-      else navCircles[i].classList.remove("selected");
-    }
-  };
 
   const jumpToSlide = (slideIndex) => {
     // call setReel(slideIndex)
