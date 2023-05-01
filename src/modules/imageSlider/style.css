@@ -4,6 +4,8 @@
   --spacer-width: 100px;
 
   --img-window-width: calc(var(--image-width) + var(--spacer-width));
+
+  --nav-circle-size: 20px;
 }
 
 .parent {
@@ -66,9 +68,9 @@
 }
 
 .nav-circle {
-  height: 10px;
-  width: 10px;
+  height: var(--nav-circle-size);
+  width: var(--nav-circle-size);
 
-  border-radius: 5px;
+  border-radius: calc(var(--nav-circle-size) / 2);
   background-color: lightgrey;
 }
