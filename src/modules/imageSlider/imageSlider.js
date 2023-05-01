@@ -30,13 +30,15 @@ const imageSlider = (imageSources) => {
       // Spacer
       const spacer = document.createElement("div");
       spacer.classList.add("spacer");
-
+      // Append
       reel.appendChild(spacer);
       reel.appendChild(slide);
-
+      // Track total slides
       slideCount += 1;
     }
   };
+
+  const navCircles = {};
 
   const createNavCircles = (container) => {
     for (let i = 0; i < slideCount; i += 1) {
@@ -47,9 +49,11 @@ const imageSlider = (imageSources) => {
       // Fill
       const fill = document.createElement("div");
       fill.classList.add("fill");
-
+      // Append
       navCircle.appendChild(fill);
       container.appendChild(navCircle);
+      // Add nav circle to object that stores all nav circles
+      navCircles[i] = navCircle;
     }
   };
 
