@@ -115,6 +115,7 @@ const imageSlider = (imageSources) => {
 
   // #endregion
   const setReel = (slideIndex) => {
+    console.log(`Setting reel to index: ${slideIndex}`);
     const positionZero = `-${slideSpacerWidth / 2}px`;
     const reelToSet = reel;
 
@@ -132,12 +133,13 @@ const imageSlider = (imageSources) => {
       }px`;
     }
 
+    console.log(`Reel position: ${reelPosition}`);
+
     reelToSet.style.left = reelPosition;
   };
 
   const setSelectedNavCircle = () => {
     Object.keys(navCircles).forEach((key) => {
-      console.log(`Key: ${key}, Current Slide: ${currentSlide}`);
       if (key === currentSlide.toString()) {
         navCircles[key].classList.add("selected");
       } else navCircles[key].classList.remove("selected");
@@ -175,8 +177,19 @@ const imageSlider = (imageSources) => {
   });
 
   const jumpToSlide = (slideIndex) => {
-    // call setReel(slideIndex)
+    console.log(`Jumpting to slide index: ${slideIndex}`);
+    const intIndex = parseInt(slideIndex, 10);
+    setReel(intIndex);
+    currentSlide = intIndex;
+    setSelectedNavCircle();
   };
+
+  Object.keys(navCircles).forEach((key) => {
+    navCircles[key].addEventListener("click", () => {
+      jumpToSlide(navCircles[key].dataset.index);
+      resetAutoAdvanceInterval();
+    });
+  });
 
   // Init
   setReel(0, reel);
