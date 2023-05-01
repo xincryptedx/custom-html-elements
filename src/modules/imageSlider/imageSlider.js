@@ -60,7 +60,7 @@ const imageSlider = (imageSources) => {
   const createElements = () => {
     // Parent
     const parent = document.createElement("div");
-    parent.classList.add("parent");
+    parent.classList.add("image-slider");
 
     // Reel
     // Container
