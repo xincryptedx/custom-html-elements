@@ -150,22 +150,28 @@ const imageSlider = (imageSources) => {
     if (next) incrementer = 1;
     else incrementer = -1;
 
-    // Set current slide but clamp it to 0 through slideCount - 1
-    currentSlide = Math.min(
-      Math.max(currentSlide + incrementer, 0),
-      slideCount - 1
-    );
+    // Set current slide and jump to start or end when needed
+    currentSlide += incrementer;
+    if (currentSlide < 0) currentSlide = slideCount - 1;
+    if (currentSlide > slideCount - 1) currentSlide = 0;
 
     setReel(currentSlide);
   };
 
-  const autoAdvanceInterval = setInterval(incrementReel, 5000);
+  let autoAdvanceInterval = setInterval(incrementReel, 5000);
+
+  const resetAutoAdvanceInterval = () => {
+    clearInterval(autoAdvanceInterval);
+    autoAdvanceInterval = setInterval(incrementReel, 5000);
+  };
 
   nextBtn.addEventListener("click", () => {
     incrementReel(true);
+    resetAutoAdvanceInterval();
   });
   previousBtn.addEventListener("click", () => {
     incrementReel(false);
+    resetAutoAdvanceInterval();
   });
 
   const jumpToSlide = (slideIndex) => {
