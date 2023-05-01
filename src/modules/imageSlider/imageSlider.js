@@ -145,6 +145,7 @@ const imageSlider = (imageSources) => {
   };
 
   const incrementReel = (next = true) => {
+    console.log("Inc");
     let incrementer;
     if (next) incrementer = 1;
     else incrementer = -1;
@@ -158,6 +159,8 @@ const imageSlider = (imageSources) => {
     setReel(currentSlide);
   };
 
+  const autoAdvanceInterval = setInterval(incrementReel, 5000);
+
   nextBtn.addEventListener("click", () => {
     incrementReel(true);
   });
@@ -167,10 +170,6 @@ const imageSlider = (imageSources) => {
 
   const jumpToSlide = (slideIndex) => {
     // call setReel(slideIndex)
-  };
-
-  const autoAdvance = () => {
-    // Set timer, call setReel(currentSlide + 1), reset timer
   };
 
   // Init
