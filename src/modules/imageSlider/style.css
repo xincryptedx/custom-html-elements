@@ -75,5 +75,6 @@
   width: var(--nav-circle-size);
 
   border-radius: calc(var(--nav-circle-size) / 2);
-  background-color: lightgrey;
+  background-color: white;
+  border: 1px solid black;
 }
