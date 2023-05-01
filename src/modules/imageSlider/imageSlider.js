@@ -27,12 +27,18 @@ const imageSlider = (imageSources) => {
       const slide = document.createElement("img");
       slide.src = validatedSources[i];
       slide.classList.add("slide");
-      // Spacer
+      // Spacer on left
       const spacer = document.createElement("div");
       spacer.classList.add("spacer");
       // Append
       reel.appendChild(spacer);
       reel.appendChild(slide);
+      // Spacer on right for last img
+      if (i === validatedSources.length - 1) {
+        const lastSpacer = document.createElement("div");
+        lastSpacer.classList.add("spacer");
+        reel.appendChild(lastSpacer);
+      }
       // Track total slides
       slideCount += 1;
     }
