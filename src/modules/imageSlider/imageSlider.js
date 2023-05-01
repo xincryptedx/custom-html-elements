@@ -115,7 +115,6 @@ const imageSlider = (imageSources) => {
 
   // #endregion
   const setReel = (slideIndex) => {
-    console.log(`Setting reel to index: ${slideIndex}`);
     const positionZero = `-${slideSpacerWidth / 2}px`;
     const reelToSet = reel;
 
@@ -132,8 +131,6 @@ const imageSlider = (imageSources) => {
         slideSpacerWidth / 2 + slideIndex * (slideWidth + slideSpacerWidth)
       }px`;
     }
-
-    console.log(`Reel position: ${reelPosition}`);
 
     reelToSet.style.left = reelPosition;
   };
@@ -177,7 +174,6 @@ const imageSlider = (imageSources) => {
   });
 
   const jumpToSlide = (slideIndex) => {
-    console.log(`Jumpting to slide index: ${slideIndex}`);
     const intIndex = parseInt(slideIndex, 10);
     setReel(intIndex);
     currentSlide = intIndex;
